@@ -159,5 +159,4 @@ proxy:
     - xhgui-ts.lndo.site
   phpredisadmin:
     - redis-ts.lndo.site
-  search:
-    - solr-ts.lndo.site
+
