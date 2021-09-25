@@ -1,0 +1,4 @@
+DB_DB=drupal9
+DB_USER=drupal9
+DB_PASS=drupal9
+DB_HOST=database

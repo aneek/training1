@@ -1,0 +1,161 @@
+name: training-sandbox
+recipe: drupal9
+config:
+  webroot: web
+  ssl: true
+  xdebug: true
+  config:
+    php: .lando/php.ini
+
+env_file:
+  - .lando/env
+
+services:
+  # Main Appserver.
+  appserver:
+    build:
+      - composer install
+    build_as_root:
+      - apt-get update -y
+      - cd /tmp && git clone https://github.com/tideways/php-profiler-extension.git
+      - cd /tmp/php-profiler-extension && phpize && ./configure && make && make install
+      - pecl install mongodb
+      - docker-php-ext-enable mongodb
+      - chown www-data:www-data /tmp/xdebug.log
+      - cp $LANDO_MOUNT/.lando/apc/apc.php $LANDO_MOUNT/web/apc.php
+    volumes:
+      - xhgui:/usr/local/src
+
+  # Drupal 8 Database.
+  database:
+    type: mariadb
+    portforward: true
+
+  # Node.js
+  node:
+    type: node:12.4
+    globals:
+      gulp-cli: latest
+
+  # PHPMyAdmin.
+  phpmyadmin:
+    type: phpmyadmin
+    overrides:
+      environment:
+        UPLOAD_LIMIT: 25600000
+    hosts:
+      - database
+
+  # MailHog
+  mailhog:
+    type: mailhog
+    portforward: true
+    hogfrom:
+      - appserver
+
+  # XHGui.
+  xhgui:
+    type: compose
+    services:
+      image: edyan/xhgui:php7.2
+      command: ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+      ports:
+        - "9999:80"
+      volumes:
+        - xhgui:/usr/local/src
+    volumes:
+      xhgui:
+
+  # Redis
+  cache:
+    type: redis
+    persist: true
+    portforward: 6379
+
+  # SOLR Search
+  search:
+    type: solr
+    portforward: 8983
+    core: lando
+    # Custom Schema.
+    # config:
+      # dir: sites/all/modules/search_api_solr/solr-conf/7.x
+
+  # phpredisadmin
+  phpredisadmin:
+    type: compose
+    services:
+      image: erikdubbelboer/phpredisadmin
+      command: [ "tini", "--", "php", "-S", "0.0.0.0:80" ]
+      depends_on:
+        - cache
+      links:
+        - cache
+      environment:
+        - ADMIN_USER=admin
+        - ADMIN_PASS=admin
+        - REDIS_1_HOST=cache
+        - REDIS_1_PORT=6379
+
+# Tooling
+tooling:
+  # Start the XDebug.
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug
+    cmd: "docker-php-ext-enable xdebug && /etc/init.d/apache2 reload"
+    user: root
+  # Stop the XDebug.
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug
+    cmd: "rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload"
+    user: root
+  # Enable XhProf
+  xhprof-on:
+    service: appserver
+    description: Enable XhProf for PHP.
+    cmd:
+      - docker-php-ext-enable tideways_xhprof && /etc/init.d/apache2 reload
+      - cp /app/.lando/xhgui/external/on/header.php /usr/local/src/xhgui/external/
+    user: root
+  # Disable XhProf
+  xhprof-off:
+    service: appserver
+    description: Disable XhProf for PHP.
+    cmd:
+      - rm /usr/local/etc/php/conf.d/docker-php-ext-tideways_xhprof.ini && /etc/init.d/apache2 reload
+      - cp /app/.lando/xhgui/external/off/header.php /usr/local/src/xhgui/external/
+    user: root
+  # Redis CLI
+  redis-cli:
+    service: cache
+  # Front end Tooling and Node services.
+  npm:
+    service: node
+  node:
+    service: node
+  gulp:
+    service: node
+  yarn:
+    service: node
+
+# Proxy
+proxy:
+  appserver:
+    - mvfglobal.lndo.site
+    - "*.mvfglobal.lndo.site"
+    - info.lasikeyesquotes.lndo.site
+    - angebote.klinikenvergleichen.lndo.site
+    - info.educompare.lndo.site
+    - opticalexpress.perfect-sight.lndo.site
+    - preventivi.cliniccompare.lndo.site
+    - info.expertmarket.lndo.site
+  mailhog:
+    - mail-mvfglobal.lndo.site
+  phpmyadmin:
+    - db-mvfglobal.lndo.site
+  xhgui:
+    - xhgui-mvfglobal.lndo.site
+  phpredisadmin:
+    - redis-mvfglobal.lndo.site
