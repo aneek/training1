@@ -33,7 +33,7 @@ services:
 
   # Node.js
   node:
-    type: node:12.4
+    type: node:14
     globals:
       gulp-cli: latest
 
@@ -99,6 +99,12 @@ services:
 
 # Tooling
 tooling:
+  # Drush
+  drush:
+    service: appserver
+    cmd: /app/vendor/bin/drush
+    env:
+      DRUSH_OPTIONS_URI: "https://ts.lndo.site"
   # Start the XDebug.
   xdebug-on:
     service: appserver
@@ -143,19 +149,15 @@ tooling:
 # Proxy
 proxy:
   appserver:
-    - mvfglobal.lndo.site
-    - "*.mvfglobal.lndo.site"
-    - info.lasikeyesquotes.lndo.site
-    - angebote.klinikenvergleichen.lndo.site
-    - info.educompare.lndo.site
-    - opticalexpress.perfect-sight.lndo.site
-    - preventivi.cliniccompare.lndo.site
-    - info.expertmarket.lndo.site
+    - ts.lndo.site
+    - "*.ts.lndo.site"
   mailhog:
-    - mail-mvfglobal.lndo.site
+    - mail-ts.lndo.site
   phpmyadmin:
-    - db-mvfglobal.lndo.site
+    - db-ts.lndo.site
   xhgui:
-    - xhgui-mvfglobal.lndo.site
+    - xhgui-ts.lndo.site
   phpredisadmin:
-    - redis-mvfglobal.lndo.site
+    - redis-ts.lndo.site
+  search:
+    - solr-ts.lndo.site
