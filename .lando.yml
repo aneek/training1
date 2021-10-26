@@ -76,10 +76,10 @@ services:
   search:
     type: solr
     portforward: 8983
-    core: lando
+    core: drupal8
     # Custom Schema.
-    # config:
-      # dir: sites/all/modules/search_api_solr/solr-conf/7.x
+    config:
+      dir: .lando/solr/conf/7.x
 
   # phpredisadmin
   phpredisadmin:
@@ -159,4 +159,6 @@ proxy:
     - xhgui-ts.lndo.site
   phpredisadmin:
     - redis-ts.lndo.site
+  search:
+    - admin.solr.lndo.site:8983
 
