@@ -16,7 +16,7 @@ services:
     build:
       - composer install
     build_as_root:
-      - apt-get update -y
+      - apt-get update -y && apt-get install -y libpng-dev jpegoptim optipng
       - cd /tmp && git clone https://github.com/tideways/php-profiler-extension.git
       - cd /tmp/php-profiler-extension && phpize && ./configure && make && make install
       - pecl install mongodb
