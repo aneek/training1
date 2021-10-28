@@ -16,16 +16,33 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.0.0",
-        "drupal/config_split": "^2.0.0",
+        "drupal/blocktabs": "^1.0@beta",
+        "drupal/config_split": "^1.7.0",
+        "drupal/content_moderation_notifications": "^3.3",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-project-message": "^9.2",
         "drupal/core-recommended": "^9.2",
         "drupal/devel": "^4.1",
+        "drupal/dynamic_layouts": "^1.5",
         "drupal/environment_indicator": "^4.0.0",
         "drupal/imageapi_optimize": "^4.0.0",
         "drupal/imageapi_optimize_binaries": "^1.0@alpha",
+        "drupal/fivestar": "^1.0@alpha",
+        "drupal/mailsystem": "^4.3",
+        "drupal/media_library_media_modify": "^1.0@beta",
+        "drupal/paragraphs": "^1.12",
+        "drupal/pathauto": "^1.8",
+        "drupal/search_api": "^1.20",
         "drupal/search_api_solr": "^4.2",
+        "drupal/slick": "^2.4",
+        "drupal/slick_views": "^2.5",
+        "drupal/swiftmailer": "^2.0",
+        "drupal/tvi": "^1.0@RC",
+        "drupal/views_infinite_scroll": "^1.9",
+        "drupal/views_slideshow": "^4.8",
+        "drupal/webform": "^6.0",
         "drush/drush": "^10.0.0"
     },
     "conflict": {
@@ -37,6 +54,12 @@
         "sort-packages": true
     },
     "extra": {
+        "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+              "Allow field types extending entity_reference to use field widgets extending media_library": "https://www.drupal.org/files/issues/2021-10-26/3173770-14.patch"
+            }
+          },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
