@@ -815,3 +815,10 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['config_sync_directory'] = '../config/sync';
+$config['system.logging']['error_level'] = 'verbose';
+
+if (getenv('NODE_ENV') == 'prod') {
+  $config['config_split.config_split.prod']['status'] = TRUE;
+} else {
+  $config['config_split.config_split.local']['status'] = TRUE;
+}
