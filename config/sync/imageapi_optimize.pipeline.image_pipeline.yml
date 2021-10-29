@@ -1,0 +1,7 @@
+uuid: 2d63a392-2dac-4908-bf8d-3d1cf9d8c81e
+langcode: en
+status: true
+dependencies: {  }
+name: image_pipeline
+label: 'Image pipeline'
+processors: {  }

@@ -1,0 +1,20 @@
+uuid: 2175b415-02c2-4d71-9ad5-2ed6c1bc9216
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_cast
+field_name: field_cast
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

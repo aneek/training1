@@ -1,0 +1,8 @@
+uuid: 15ec47af-1e7d-4588-b136-49341d12ebea
+langcode: en
+status: true
+dependencies: {  }
+name: 'News Type'
+vid: news_type
+description: 'The type of a news'
+weight: 0

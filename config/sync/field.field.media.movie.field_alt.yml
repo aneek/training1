@@ -1,0 +1,21 @@
+uuid: 90104fb5-acc8-4ad7-ae41-3b296a08fc08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_alt
+    - media.type.movie
+  module:
+    - text
+id: media.movie.field_alt
+field_name: field_alt
+entity_type: media
+bundle: movie
+label: Alt
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

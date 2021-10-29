@@ -1,0 +1,23 @@
+uuid: 8d873dc2-2ce2-4825-a4c1-8f6ba42e8b3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cast.field_cast
+    - paragraphs.paragraphs_type.cast
+id: paragraph.cast.default
+targetEntityType: paragraph
+bundle: cast
+mode: default
+content:
+  field_cast:
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

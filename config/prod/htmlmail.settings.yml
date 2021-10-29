@@ -1,0 +1,14 @@
+debug: false
+theme: bartik
+html_with_plain: false
+use_mail_mime: false
+postfilter: basic_html
+test:
+  to: an.nguyen@codeenginestudio.com
+  subject: 'Test email'
+  body:
+    value: "<p>body test</p>\r\n\r\n<p><a href=\"https://fb.com\">https://fb.com</a></p>\r\n"
+    format: full_html
+  class: php_mail
+_core:
+  default_config_hash: Jh_7Qy5GHQxxThw125M0lN5htchRjsy4fQtImF8RBd8

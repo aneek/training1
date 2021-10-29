@@ -1,0 +1,195 @@
+uuid: 1a027172-8d21-46b1-b94a-77408277ea5a
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.movie.body
+    - field.field.node.movie.field_cast
+    - field.field.node.movie.field_link
+    - field.field.node.movie.field_movie_image
+    - field.field.node.movie.field_rating
+    - field.field.node.movie.field_review_genre
+    - field.field.node.movie.layout_builder__layout
+    - node.type.movie
+  module:
+    - field_layout
+    - fivestar
+    - layout_builder
+    - layout_discovery
+    - link
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          91827f81-cd97-4287-87cf-1c2ceae49d0b:
+            uuid: 91827f81-cd97-4287-87cf-1c2ceae49d0b
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:movie:links'
+            additional: {  }
+            weight: 0
+          bc7e07af-48cc-4e40-96f7-db1ce1f34163:
+            uuid: bc7e07af-48cc-4e40-96f7-db1ce1f34163
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:movie:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+          d3ddb29d-df8a-4d88-9c4f-7927a5f5e9cc:
+            uuid: d3ddb29d-df8a-4d88-9c4f-7927a5f5e9cc
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:movie:field_link'
+              formatter:
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+                type: link
+            additional: {  }
+            weight: 2
+          2fe97975-1971-4b86-a23e-4ce8a652feb7:
+            uuid: 2fe97975-1971-4b86-a23e-4ce8a652feb7
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:movie:field_rating'
+              formatter:
+                label: above
+                settings:
+                  text_format: average
+                  display_format: average
+                  fivestar_widget: basic
+                third_party_settings: {  }
+                type: fivestar_stars
+            additional: {  }
+            weight: 3
+          2c4b0eed-6e15-4622-8a54-6648ab148bc2:
+            uuid: 2c4b0eed-6e15-4622-8a54-6648ab148bc2
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:movie:field_trailers'
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 4
+          304cc425-5811-44bb-8161-9adc5bcf9274:
+            uuid: 304cc425-5811-44bb-8161-9adc5bcf9274
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:movie:field_review_genre'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 5
+        third_party_settings: {  }
+id: node.movie.full
+targetEntityType: node
+bundle: movie
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_link:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_rating:
+    weight: 3
+    label: above
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+    type: fivestar_stars
+    region: content
+  field_review_genre:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_trailers:
+    type: entity_reference_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_cast: true
+  field_movie_image: true
+  langcode: true
+  layout_builder__layout: true
+  search_api_excerpt: true

@@ -16,16 +16,35 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.0.0",
-        "drupal/config_split": "^2.0.0",
+        "drupal/age_field_formatter": "^3.0",
+        "drupal/blocktabs": "^1.0@beta",
+        "drupal/config_split": "^1.7",
+        "drupal/content_moderation_notifications": "^3.3",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-project-message": "^9.2",
         "drupal/core-recommended": "^9.2",
         "drupal/devel": "^4.1",
         "drupal/environment_indicator": "^4.0.0",
+        "drupal/faker_generate": "^2.0",
+        "drupal/file_entity": "^2.0@beta",
+        "drupal/fivestar": "^1.0@alpha",
+        "drupal/htmlmail": "^3.0@alpha",
         "drupal/imageapi_optimize": "^4.0.0",
         "drupal/imageapi_optimize_binaries": "^1.0@alpha",
+        "drupal/imagefield_default_alt_and_title": "^1.4",
+        "drupal/mailsystem": "^4.3",
+        "drupal/media_library_media_modify": "^1.0@beta",
+        "drupal/menu_item_role_access": "^2.0",
+        "drupal/paragraphs": "^1.12",
+        "drupal/pathauto": "^1.8",
+        "drupal/search_api": "^1.20",
         "drupal/search_api_solr": "^4.2",
+        "drupal/smtp": "^1.0",
+        "drupal/views_infinite_scroll": "^1.9",
+        "drupal/views_slideshow": "^4.8",
+        "drupal/webform": "^6.0",
         "drush/drush": "^10.0.0"
     },
     "conflict": {
@@ -37,6 +56,13 @@
         "sort-packages": true
     },
     "extra": {
+        "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+                "2985882": "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch",
+                "3173770": "https://www.drupal.org/files/issues/2021-08-26/3173770-9.patch"
+            }
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"

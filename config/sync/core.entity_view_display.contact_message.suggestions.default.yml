@@ -1,0 +1,178 @@
+uuid: 2ebf5333-6eb5-4d53-b328-eada3512498f
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.suggestions
+    - field.field.contact_message.suggestions.field_con
+    - field.field.contact_message.suggestions.field_email
+    - field.field.contact_message.suggestions.field_name
+    - field.field.contact_message.suggestions.field_phone_number
+    - field.field.contact_message.suggestions.field_request_title
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - options
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          d849128f-d6ff-4bfa-b0e6-90fd5a7817df:
+            uuid: d849128f-d6ff-4bfa-b0e6-90fd5a7817df
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:contact_message:suggestions:message'
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+          23db658b-1ec3-47aa-920a-ac96c0da245b:
+            uuid: 23db658b-1ec3-47aa-920a-ac96c0da245b
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:contact_message:suggestions:field_request_title'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 1
+          9dc4a54b-4436-4396-8175-31b883aaff0e:
+            uuid: 9dc4a54b-4436-4396-8175-31b883aaff0e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:contact_message:suggestions:field_name'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 2
+          6fa85d56-2fe5-41ee-8e95-fedaf067f7a4:
+            uuid: 6fa85d56-2fe5-41ee-8e95-fedaf067f7a4
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:contact_message:suggestions:field_email'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: basic_string
+            additional: {  }
+            weight: 3
+          4f401738-1a61-467b-8e26-9026c8a01927:
+            uuid: 4f401738-1a61-467b-8e26-9026c8a01927
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:contact_message:suggestions:field_phone_number'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 4
+          6ec8f7c2-8153-4bfb-9393-897595b926f3:
+            uuid: 6ec8f7c2-8153-4bfb-9393-897595b926f3
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:contact_message:suggestions:field_con'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 5
+        third_party_settings: {  }
+id: contact_message.suggestions.default
+targetEntityType: contact_message
+bundle: suggestions
+mode: default
+content:
+  field_con:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_email:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_name:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_phone_number:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_request_title:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  message:
+    type: string
+    weight: 0
+    label: above
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

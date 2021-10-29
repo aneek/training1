@@ -1,0 +1,14 @@
+uuid: f2548e28-fb6a-481f-87d5-459fa775c011
+langcode: en
+status: true
+dependencies: {  }
+name: details_300x200
+label: 'Details 300x200'
+effects:
+  b5555d8d-a303-4091-929a-3cdc8c4a249a:
+    uuid: b5555d8d-a303-4091-929a-3cdc8c4a249a
+    id: image_resize
+    weight: 1
+    data:
+      width: 300
+      height: 200

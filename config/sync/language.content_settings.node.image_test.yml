@@ -1,0 +1,11 @@
+uuid: b3812d38-dade-44ba-88b1-81a5369a4c81
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.image_test
+id: node.image_test
+target_entity_type_id: node
+target_bundle: image_test
+default_langcode: site_default
+language_alterable: false

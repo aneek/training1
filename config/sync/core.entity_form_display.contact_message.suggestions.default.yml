@@ -1,0 +1,124 @@
+uuid: f126bda2-f42b-4811-b47c-1704d1be49c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.suggestions
+    - field.field.contact_message.suggestions.field_con
+    - field.field.contact_message.suggestions.field_email
+    - field.field.contact_message.suggestions.field_name
+    - field.field.contact_message.suggestions.field_phone_number
+    - field.field.contact_message.suggestions.field_request_title
+  module:
+    - conditional_fields
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: contact_message.suggestions.default
+targetEntityType: contact_message
+bundle: suggestions
+mode: default
+content:
+  copy:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_con:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_email:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        f29ec5af-8100-423b-84b2-dcbfcf56254e:
+          dependee: field_con
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: Email
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: contact_message
+          bundle: suggestions
+    type: email_default
+    region: content
+  field_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone_number:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        bc6ac554-8a51-4dc5-8203-9d40b1dba996:
+          dependee: field_con
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: Phone
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: contact_message
+          bundle: suggestions
+    type: string_textfield
+    region: content
+  field_request_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  message:
+    type: string_textarea
+    weight: 5
+    settings:
+      rows: 12
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden:
+  mail: true
+  name: true
+  preview: true
+  subject: true

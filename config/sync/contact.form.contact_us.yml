@@ -1,0 +1,12 @@
+uuid: 036ac418-cb66-41c3-b0aa-3af455ac5f12
+langcode: en
+status: true
+dependencies: {  }
+id: contact_us
+label: 'Contact Us'
+recipients:
+  - an.nguyen@codeenginestudio.com
+reply: ''
+weight: 0
+message: 'Thank you for getting in touch!'
+redirect: ''

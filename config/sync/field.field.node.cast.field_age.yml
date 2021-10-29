@@ -1,0 +1,21 @@
+uuid: 578d0073-35d5-4cbd-99e1-8eec2e331b7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_age
+    - node.type.cast
+  module:
+    - datetime
+id: node.cast.field_age
+field_name: field_age
+entity_type: node
+bundle: cast
+label: Age
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

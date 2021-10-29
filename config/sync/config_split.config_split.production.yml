@@ -1,0 +1,22 @@
+uuid: 1978ab17-ef1e-4b21-8fcc-07976a69affc
+langcode: en
+status: true
+dependencies: {  }
+id: production
+label: Production
+description: 'This is the config for production'
+folder: ../config/prod
+module:
+  devel: 0
+  devel_generate: 0
+  faker_generate: 0
+  htmlmail: 0
+  mailsystem: 0
+  smtp: 0
+  webform_devel: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

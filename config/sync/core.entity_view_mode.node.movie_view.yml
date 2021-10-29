@@ -1,0 +1,10 @@
+uuid: a8ea0d4f-3528-475d-a871-a7abcf9f2f8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.movie_view
+label: 'Movie View Mode'
+targetEntityType: node
+cache: true

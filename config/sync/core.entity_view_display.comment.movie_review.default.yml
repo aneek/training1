@@ -1,0 +1,71 @@
+uuid: 8e5717b6-91c7-4b56-9770-bb0ca74699bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.movie_review
+    - field.field.comment.movie_review.comment_body
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          374d7ec6-79ab-441d-b04b-8e2b9ccbfebe:
+            uuid: 374d7ec6-79ab-441d-b04b-8e2b9ccbfebe
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:comment:movie_review:comment_body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+          cc1c6976-bd26-42a4-a3b7-27ce4bf11498:
+            uuid: cc1c6976-bd26-42a4-a3b7-27ce4bf11498
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:comment:movie_review:links'
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+id: comment.movie_review.default
+targetEntityType: comment
+bundle: movie_review
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

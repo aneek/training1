@@ -1,0 +1,21 @@
+uuid: 00655c5e-9013-49c6-b17c-22dd016f965c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.movie
+  module:
+    - layout_builder
+id: node.movie.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: movie
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

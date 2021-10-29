@@ -1,0 +1,14 @@
+uuid: 9b920d23-5fcc-4d41-b1fb-588ec83f6116
+name: MovieDB
+mail: admin@localhost.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/1748
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

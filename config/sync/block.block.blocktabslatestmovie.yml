@@ -1,0 +1,27 @@
+uuid: 2f4c04c3-41b7-4d47-8b95-c0607aaa384f
+langcode: en
+status: false
+dependencies:
+  config:
+    - blocktabs.blocktabs.latest_movie
+  module:
+    - blocktabs
+    - system
+  theme:
+    - bartik
+id: blocktabslatestmovie
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'blocktabs_block:latest_movie'
+settings:
+  id: 'blocktabs_block:latest_movie'
+  label: 'Blocktabs:Latest Movie'
+  provider: blocktabs
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

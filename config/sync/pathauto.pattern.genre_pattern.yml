@@ -1,0 +1,23 @@
+uuid: 0e00d596-7469-4f91-9ded-692a22c9bd6c
+langcode: en
+status: false
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: genre_pattern
+label: 'Genre pattern'
+type: 'canonical_entities:taxonomy_term'
+pattern: !!binary Lx1tb3ZpZXMvW3Rlcm06bmFtZV0=
+selection_criteria:
+  b6fb0029-5880-461e-957e-6c64a336d4a6:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      genre: genre
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: b6fb0029-5880-461e-957e-6c64a336d4a6
+selection_logic: and
+weight: -5
+relationships: {  }

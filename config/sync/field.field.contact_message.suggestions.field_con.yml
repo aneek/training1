@@ -1,0 +1,23 @@
+uuid: ec4bbc55-0d5a-454d-9613-9308aced6d4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.suggestions
+    - field.storage.contact_message.field_con
+  module:
+    - options
+id: contact_message.suggestions.field_con
+field_name: field_con
+entity_type: contact_message
+bundle: suggestions
+label: 'Contact Preference'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Email
+default_value_callback: ''
+settings: {  }
+field_type: list_string

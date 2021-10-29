@@ -1,0 +1,31 @@
+uuid: 8483b726-9ba9-4041-895c-68a04cb8c1b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_with_alt
+    - media.type.image
+    - node.type.image_test
+  module:
+    - media_library_media_modify
+id: node.image_test.field_image_with_alt
+field_name: field_image_with_alt
+entity_type: node
+bundle: image_test
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_entity_modify

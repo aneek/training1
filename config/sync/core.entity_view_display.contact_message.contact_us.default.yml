@@ -1,0 +1,105 @@
+uuid: c6ee9dac-a8af-4f65-bdf5-4a161c00223d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.contact_us
+    - field.field.contact_message.contact_us.field_message
+    - field.field.contact_message.contact_us.field_your_email
+    - field.field.contact_message.contact_us.field_your_name
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          bba88cbc-9cbf-4400-a5b4-4b88f20c2ec0:
+            uuid: bba88cbc-9cbf-4400-a5b4-4b88f20c2ec0
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:contact_message:contact_us:field_your_name'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 0
+          0828f16e-8769-4fca-91f1-6ab552fc809e:
+            uuid: 0828f16e-8769-4fca-91f1-6ab552fc809e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:contact_message:contact_us:field_your_email'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: basic_string
+            additional: {  }
+            weight: 1
+          cf4c0fb8-259d-4018-8dac-605c8ff17259:
+            uuid: cf4c0fb8-259d-4018-8dac-605c8ff17259
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:contact_message:contact_us:field_message'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+id: contact_message.contact_us.default
+targetEntityType: contact_message
+bundle: contact_us
+mode: default
+content:
+  field_message:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_your_email:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_your_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  message: true
+  search_api_excerpt: true
