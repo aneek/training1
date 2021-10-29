@@ -1,0 +1,18 @@
+uuid: a42c0fdf-dfe1-4d47-bdb5-3928417dd36a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.layout_pages
+id: node.layout_pages.title
+field_name: title
+entity_type: node
+bundle: layout_pages
+label: 'Layout Pages'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

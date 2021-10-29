@@ -1,0 +1,40 @@
+uuid: 89cb40c8-7f40-4cbd-a493-aa22da81713c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.image_test.body
+    - field.field.node.image_test.field_image_with_alt
+    - node.type.image_test
+  module:
+    - text
+    - user
+id: node.image_test.default
+targetEntityType: node
+bundle: image_test
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image_with_alt:
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

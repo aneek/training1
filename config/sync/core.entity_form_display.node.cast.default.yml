@@ -1,0 +1,134 @@
+uuid: b1ed5822-dbe6-4e91-b727-8540b1135e89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.cast.body
+    - field.field.node.cast.field_age
+    - field.field.node.cast.field_p
+    - field.field.node.cast.field_person_s_image
+    - field.field.node.cast.field_sex
+    - image.style.thumbnail
+    - node.type.cast
+  module:
+    - content_moderation
+    - datetime
+    - field_layout
+    - image
+    - layout_discovery
+    - media_library_media_modify
+    - path
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.cast.default
+targetEntityType: node
+bundle: cast
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_age:
+    weight: 123
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_p:
+    weight: 126
+    settings:
+      form_mode: default
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_media_modify_widget
+    region: content
+  field_person_s_image:
+    weight: 125
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_sex:
+    weight: 124
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: Name
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,19 @@
+uuid: 72687223-8686-4c6c-8273-6b5a06239fe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.suggestions
+    - field.storage.contact_message.field_phone_number
+id: contact_message.suggestions.field_phone_number
+field_name: field_phone_number
+entity_type: contact_message
+bundle: suggestions
+label: 'Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

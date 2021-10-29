@@ -1,0 +1,73 @@
+uuid: 6951eb2c-43e3-4d9d-ad7a-53185fe743fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.cast.body
+    - field.field.node.cast.field_age
+    - field.field.node.cast.field_p
+    - field.field.node.cast.field_person_s_image
+    - field.field.node.cast.field_sex
+    - node.type.cast
+  module:
+    - age_field_formatter
+    - image
+    - options
+    - text
+    - user
+id: node.cast.default
+targetEntityType: node
+bundle: cast
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 101
+    settings:
+      trim_length: 100
+    third_party_settings: {  }
+    region: content
+  field_age:
+    weight: 103
+    label: above
+    settings:
+      age_format: age_only
+      year_suffix: '1'
+      date_format: 'Y-m-d\TH:i:s'
+    third_party_settings: {  }
+    type: age_field_formatter
+    region: content
+  field_p:
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_person_s_image:
+    weight: 105
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_sex:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

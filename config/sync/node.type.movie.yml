@@ -1,0 +1,18 @@
+uuid: ba713a6a-f047-45ad-8a46-669809e829f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Movie
+type: movie
+description: 'A content type to store the <em>Movie</em> details.'
+help: 'The title of the movie'
+new_revision: true
+preview_mode: 1
+display_submitted: true

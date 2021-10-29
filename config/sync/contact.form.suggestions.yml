@@ -1,0 +1,12 @@
+uuid: acbf0534-18ed-499a-8a33-a8b3a389038c
+langcode: en
+status: true
+dependencies: {  }
+id: suggestions
+label: Suggestions
+recipients:
+  - an.nguyen@codeenginestudio.com
+reply: ''
+weight: 0
+message: ''
+redirect: ''

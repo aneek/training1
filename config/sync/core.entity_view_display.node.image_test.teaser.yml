@@ -1,0 +1,34 @@
+uuid: 91595ff2-a012-4d7f-9478-d2553857b62f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.image_test.body
+    - field.field.node.image_test.field_image_with_alt
+    - node.type.image_test
+  module:
+    - text
+    - user
+id: node.image_test.teaser
+targetEntityType: node
+bundle: image_test
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_image_with_alt: true
+  langcode: true
+  search_api_excerpt: true

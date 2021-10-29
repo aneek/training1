@@ -1,0 +1,27 @@
+uuid: 840907ad-626a-49af-be42-683e897f8271
+langcode: en
+status: true
+dependencies: {  }
+name: latest_movie
+label: 'Latest Movie'
+tabs:
+  a153a0c0-1e94-4c22-8014-e22f9e52420b:
+    uuid: a153a0c0-1e94-4c22-8014-e22f9e52420b
+    id: views_tab
+    title: 'Movie News'
+    weight: 1
+    data:
+      view_name: movie_news
+      view_display: block_1
+      view_arg: ''
+  6fd37001-49a5-4635-96a9-7eb960b28b6d:
+    uuid: 6fd37001-49a5-4635-96a9-7eb960b28b6d
+    id: views_tab
+    title: 'Celeb News'
+    weight: 2
+    data:
+      view_name: celebrity_news
+      view_display: block_1
+      view_arg: ''
+event: click
+style: default

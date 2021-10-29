@@ -1,0 +1,32 @@
+uuid: d1798ef8-fe77-4392-9790-02c4064b3889
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.recommended_movies
+  module:
+    - ctools
+    - views
+  theme:
+    - bartik
+id: views_block__recommended_movies_block_1
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_block:recommended_movies-block_1'
+settings:
+  id: 'views_block:recommended_movies-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      movie: movie
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

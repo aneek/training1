@@ -1,0 +1,21 @@
+uuid: b274f404-6c73-4995-a17e-80dbffdaafff
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - media_library_media_modify
+    - node
+id: node.field_p
+field_name: field_p
+entity_type: node
+type: entity_reference_entity_modify
+settings:
+  target_type: media
+module: media_library_media_modify
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

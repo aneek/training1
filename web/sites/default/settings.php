@@ -815,3 +815,12 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['config_sync_directory'] = '../config/sync';
+
+if (getenv('LOCAL')) {
+  $config['config_split.config_split.dev']['status'] = TRUE;
+  $config['config_split.config_split.production']['status'] = FALSE;
+}
+else {
+  $config['config_split.config_split.dev']['status'] = FALSE;
+  $config['config_split.config_split.production']['status'] = TRUE;
+}

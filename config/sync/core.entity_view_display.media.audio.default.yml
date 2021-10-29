@@ -1,0 +1,70 @@
+uuid: 27ec0f2b-2a62-4c42-b145-c6dc8c27b48d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.audio.field_media_audio_file
+    - media.type.audio
+  module:
+    - field_layout
+    - file
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          370e6478-b191-4bd0-b9c6-926fc5fb3509:
+            uuid: 370e6478-b191-4bd0-b9c6-926fc5fb3509
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:media:audio:field_media_audio_file'
+              formatter:
+                type: file_audio
+                label: visually_hidden
+                settings:
+                  controls: true
+                  autoplay: false
+                  loop: false
+                  multiple_file_display_type: tags
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+_core:
+  default_config_hash: SWf3MLdbEKvlx4Vs6iPwDHu5pr1aKT0SJmgp8no73-k
+id: media.audio.default
+targetEntityType: media
+bundle: audio
+mode: default
+content:
+  field_media_audio_file:
+    type: file_audio
+    weight: 0
+    label: visually_hidden
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

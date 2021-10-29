@@ -1,0 +1,8 @@
+uuid: b22a46b4-83dd-48cc-b794-637e97e31385
+langcode: en
+status: true
+dependencies: {  }
+id: movie_review
+label: 'Movie Review'
+target_entity_type_id: node
+description: ''

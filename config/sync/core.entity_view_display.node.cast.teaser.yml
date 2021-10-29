@@ -1,0 +1,40 @@
+uuid: 77f1eecd-c013-4d16-a618-11534f9442e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cast.body
+    - field.field.node.cast.field_age
+    - field.field.node.cast.field_p
+    - field.field.node.cast.field_person_s_image
+    - field.field.node.cast.field_sex
+    - node.type.cast
+  module:
+    - text
+    - user
+id: node.cast.teaser
+targetEntityType: node
+bundle: cast
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_age: true
+  field_p: true
+  field_person_s_image: true
+  field_sex: true
+  langcode: true
+  search_api_excerpt: true

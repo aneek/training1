@@ -1,0 +1,24 @@
+uuid: e0dab331-eb3d-4cfb-b1e2-be5b123ddc2e
+langcode: en
+status: true
+dependencies: {  }
+id: dev
+label: Dev
+description: 'This is a configuration for local development'
+folder: ../config/dev
+module:
+  field_ui: 0
+  htmlmail: 0
+  devel: 0
+  devel_generate: 0
+  faker_generate: 0
+theme: {  }
+blacklist:
+  - htmlmail.settings
+  - mailsystem.settings
+  - system.mail
+graylist:
+  - htmlmail.settings
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

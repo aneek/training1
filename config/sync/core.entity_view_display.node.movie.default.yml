@@ -1,0 +1,109 @@
+uuid: 0fb416f9-6434-41e7-9ef6-c4eb6726c0ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.movie.body
+    - field.field.node.movie.field_cast
+    - field.field.node.movie.field_link
+    - field.field.node.movie.field_movie_image
+    - field.field.node.movie.field_rating
+    - field.field.node.movie.field_review_genre
+    - field.field.node.movie.layout_builder__layout
+    - image.style.large
+    - node.type.movie
+  module:
+    - entity_reference_revisions
+    - field_layout
+    - fivestar
+    - layout_builder
+    - link
+    - media
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.movie.default
+targetEntityType: node
+bundle: movie
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cast:
+    type: entity_reference_revisions_entity_view
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_link:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_movie_image:
+    weight: 9
+    label: above
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  field_rating:
+    type: fivestar_stars
+    weight: 7
+    region: content
+    label: above
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+  field_review_genre:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_trailers:
+    type: entity_reference_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  layout_builder__layout: true
+  search_api_excerpt: true

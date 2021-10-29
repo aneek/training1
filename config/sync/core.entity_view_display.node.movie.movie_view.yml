@@ -1,0 +1,74 @@
+uuid: b0f13ec7-1047-42bb-a71e-47065c3cef82
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.movie_view
+    - field.field.node.movie.body
+    - field.field.node.movie.field_cast
+    - field.field.node.movie.field_link
+    - field.field.node.movie.field_movie_image
+    - field.field.node.movie.field_rating
+    - field.field.node.movie.field_review_genre
+    - field.field.node.movie.layout_builder__layout
+    - node.type.movie
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          0660559e-1a99-462f-9feb-da009e1b9364:
+            uuid: 0660559e-1a99-462f-9feb-da009e1b9364
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:movie:body'
+              formatter:
+                label: hidden
+                type: text_trimmed
+                settings:
+                  trim_length: 200
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+id: node.movie.movie_view
+targetEntityType: node
+bundle: movie
+mode: movie_view
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 1
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_cast: true
+  field_link: true
+  field_movie_image: true
+  field_rating: true
+  field_review_genre: true
+  field_trailers: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true

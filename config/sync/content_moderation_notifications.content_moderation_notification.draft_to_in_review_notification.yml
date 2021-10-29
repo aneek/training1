@@ -1,0 +1,18 @@
+uuid: 97a1c1b6-6a4f-4631-a200-3d636e6124be
+langcode: en
+status: true
+dependencies: {  }
+id: draft_to_in_review_notification
+workflow: moview_review_workflow
+transitions:
+  draft_to_in_review: draft_to_in_review
+roles:
+  administrator: administrator
+author: true
+site_mail: false
+emails: ''
+subject: 'A movie review has been assigned to you'
+body:
+  value: ''
+  format: basic_html
+label: 'Draft To In Review Notification'

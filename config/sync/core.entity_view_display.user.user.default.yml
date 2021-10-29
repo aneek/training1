@@ -1,0 +1,78 @@
+uuid: cf68bb2a-2c60-4141-a9d6-e9cb842e98fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - field_layout
+    - image
+    - layout_builder
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          5a5225b6-e5f4-46d7-ad7b-8665b45f532e:
+            uuid: 5a5225b6-e5f4-46d7-ad7b-8665b45f532e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:user:user:user_picture'
+              formatter:
+                type: image
+                settings:
+                  image_style: thumbnail
+                  image_link: content
+                third_party_settings: {  }
+                label: hidden
+            additional: {  }
+            weight: 0
+          412c43c2-fee2-4194-88ea-610d0e49c7ff:
+            uuid: 412c43c2-fee2-4194-88ea-610d0e49c7ff
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:user:user:member_for'
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  member_for:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  langcode: true
+  search_api_excerpt: true

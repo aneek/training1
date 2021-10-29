@@ -1,0 +1,59 @@
+uuid: 0f06425e-4ff1-420c-8be1-85bf92c7e279
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - ctools
+    - node
+    - system
+    - user
+  theme:
+    - bartik
+_core:
+  default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
+id: bartik_main_menu
+theme: bartik
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      movie: movie
+      movie_review: movie_review
+      news: news
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      genre: genre
+      tags: tags
+    negate: true
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      administrator: administrator
+      critic: critic
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

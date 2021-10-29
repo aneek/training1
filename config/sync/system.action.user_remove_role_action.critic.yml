@@ -1,0 +1,14 @@
+uuid: 23d1ceab-798c-42fc-878d-4e55eac3acc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.critic
+  module:
+    - user
+id: user_remove_role_action.critic
+label: 'Remove the Critic role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: critic

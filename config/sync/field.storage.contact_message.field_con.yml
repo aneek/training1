@@ -1,0 +1,27 @@
+uuid: f414bceb-cc92-4b00-bcf4-8bf16723046d
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_con
+field_name: field_con
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Email
+      label: Email
+    -
+      value: Phone
+      label: Phone
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

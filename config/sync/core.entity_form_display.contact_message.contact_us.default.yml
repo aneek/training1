@@ -1,0 +1,68 @@
+uuid: e01a821c-5c2a-4ca7-b085-170f645c60f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.contact_us
+    - field.field.contact_message.contact_us.field_message
+    - field.field.contact_message.contact_us.field_your_email
+    - field.field.contact_message.contact_us.field_your_name
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: contact_message.contact_us.default
+targetEntityType: contact_message
+bundle: contact_us
+mode: default
+content:
+  copy:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_your_email:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_your_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  message:
+    type: string_textarea
+    weight: 2
+    settings:
+      rows: 12
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  preview:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_message: true
+  mail: true
+  name: true
+  subject: true

@@ -1,0 +1,15 @@
+uuid: 076bc5b8-9e15-470f-84ae-dc4e82fc1145
+langcode: en
+status: true
+dependencies: {  }
+name: thumbnail_130x100
+label: 'Thumbnail 130x100'
+effects:
+  ee228dc1-b21d-4dcb-b3aa-9467c474327c:
+    uuid: ee228dc1-b21d-4dcb-b3aa-9467c474327c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 130
+      height: 100
+      anchor: center-center

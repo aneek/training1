@@ -1,0 +1,22 @@
+uuid: 87b93d92-862d-4fb4-8800-6c0957228648
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.movie_review
+    - workflows.workflow.moview_review_workflow
+  module:
+    - content_moderation
+    - node
+id: critic
+label: Critic
+weight: 3
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'create movie_review content'
+  - 'delete own movie_review content'
+  - 'edit own movie_review content'
+  - 'use moview_review_workflow transition create_new_draft'
+  - 'use moview_review_workflow transition draft_to_in_review'
+  - 'view movie_review revisions'
