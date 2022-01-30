@@ -34,8 +34,10 @@ services:
   # Node.js
   node:
     type: node:14
+    ssl: true
     globals:
       gulp-cli: latest
+    command: cd /app/web/themes/custom/movie_db && node_modules/.bin/gulp serve
 
   # PHPMyAdmin.
   phpmyadmin:
@@ -145,6 +147,12 @@ tooling:
     service: node
   yarn:
     service: node
+  permission-fix:
+    service: appserver
+    description: Default directory permission fix.
+    cmd:
+      -  chmod ug+w /app/web/sites/default
+    user: root
 
 # Proxy
 proxy:
@@ -161,4 +169,5 @@ proxy:
     - redis-ts.lndo.site
   search:
     - admin.solr.lndo.site:8983
-
+  node:
+    - bs-ts.lndo.site:3000

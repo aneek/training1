@@ -1,0 +1,32 @@
+name: Cake
+description: A subtheme of Bartik to demonostrate different sub theme inheritance and color module integration.
+type: theme
+
+core_version_requirement: ^8 || ^9
+# Base theme
+base theme: bartik
+
+libraries:
+  - cake/global-styling
+  - cake/textillate-init
+
+# Some more values
+version: '1.0'
+#hidden: true
+
+# Regions
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_fifth: 'Footer fifth'

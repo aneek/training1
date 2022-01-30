@@ -1,0 +1,60 @@
+<?php
+/**
+ * @file
+ * Contains theme specific hooks.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function cake_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+  if (isset($form_id)) {
+    return;
+  }
+  $elements = [
+    'h1' => t('h1'),
+    'h2' => t('h2'),
+    'h3' => t('h3'),
+  ];
+  // Create a settings to support the textillate animation.
+  $form['textillate_wrapper'] = [
+    '#type' => 'details',
+    '#title' => t('Textillate Settings'),
+    '#open' => TRUE,
+  ];
+
+  $form['textillate_wrapper']['cake_textillate_enable'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable Textillate Animation'),
+    '#default_value' => theme_get_setting('cake_textillate_enable'),
+    '#description'   => t('Select this to enable the animation of any tags.'),
+  );
+
+  $form['textillate_wrapper']['cake_textillate_element'] = array(
+    '#type' => 'select',
+    '#title' => t('Textillate Element'),
+    '#options' => $elements,
+    '#default_value' => theme_get_setting('cake_textillate_element'),
+    '#description'   => t('Select which element where the style applies.'),
+    '#states' => [
+      'visible' => [
+        ':input[name="cake_textillate_enable"]' => ['checked' => TRUE],
+      ]
+    ],
+  );
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function cake_page_attachments_alter(array &$attachments) {
+  // Add the drupalSettings if the theme settings are set.
+  $enabled = theme_get_setting('cake_textillate_enable');
+  $element = theme_get_setting('cake_textillate_element');
+  $attachments['#attached']['drupalSettings']['cake']['textillate_settings'] = [
+    'enabled' => $enabled,
+    'element' => $element,
+  ];
+}

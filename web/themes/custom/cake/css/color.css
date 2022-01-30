@@ -1,0 +1,21 @@
+#header {
+  background-image: none;
+  background-color: #3f51b5;
+}
+h1 {
+  color: #536dfe;
+}
+body {
+  color: #3b3b3b;
+  background-color: #ffffff;
+}
+#page {
+  background-color: #ffffff;
+}
+
+.primary_color {
+  color: #3f51b5;
+}
+.primary_color_bg {
+  background-color: #3f51b5
+}
