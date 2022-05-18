@@ -1,0 +1,18 @@
+uuid: 5399ef42-f5fc-40e3-ad74-c122799b03c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_gender
+field_name: field_gender
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

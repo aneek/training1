@@ -1,0 +1,32 @@
+uuid: 3e8d50a4-eaa5-4b3d-a6e5-7e8dabcf0be3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.test_similar_movies_carousel
+  module:
+    - ctools
+    - views
+  theme:
+    - bartik
+id: views_block__test_similar_movies_carousel_block_1
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:test_similar_movies_carousel-block_1'
+settings:
+  id: 'views_block:test_similar_movies_carousel-block_1'
+  label: 'Similar Movies'
+  provider: views
+  label_display: visible
+  views_label: 'Similar Movies'
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      movie: movie
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

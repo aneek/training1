@@ -1,0 +1,36 @@
+uuid: af45187a-6d73-49a0-b64c-3e971aefdc57
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+    - system
+  theme:
+    - movie_db
+id: movie_db_entityviewtaxonomyterm
+theme: movie_db
+region: content
+weight: -7
+provider: null
+plugin: 'entity_view:taxonomy_term'
+settings:
+  id: 'entity_view:taxonomy_term'
+  label: 'Entity view (Taxonomy term)'
+  label_display: visible
+  provider: ctools
+  view_mode: full
+  context_mapping:
+    entity: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      news: news
+  request_path:
+    id: request_path
+    negate: false
+    pages: /news

@@ -1,0 +1,9 @@
+{
+	"name": "drupal/movie_db",
+	"type": "drupal-theme",
+	"description": "Movie DB bootstrap based theme v1.0",
+	"license": "GPL-2.0+",
+	"require": {
+		"drupal/bootstrap_barrio": ">=5.1.3"
+	}
+}

@@ -13,6 +13,7 @@ env_file:
 services:
   # Main Appserver.
   appserver:
+    type: php:7.3
     build:
       - composer install
     build_as_root:
@@ -34,8 +35,10 @@ services:
   # Node.js
   node:
     type: node:14
+    ssl: true
     globals:
       gulp-cli: latest
+    command: cd /app/web/themes/custom/movie_db && node_modules/.bin/gulp serve
 
   # PHPMyAdmin.
   phpmyadmin:
@@ -161,4 +164,5 @@ proxy:
     - redis-ts.lndo.site
   search:
     - admin.solr.lndo.site:8983
-
+  node:
+    - bs-ts.lndo.site:3000

@@ -1,0 +1,35 @@
+uuid: 692e7672-5936-4ae0-ab38-499ef4180553
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+  theme:
+    - bartik
+id: entityviewtaxonomyterm
+theme: bartik
+region: content
+weight: -4
+provider: null
+plugin: 'entity_view:taxonomy_term'
+settings:
+  id: 'entity_view:taxonomy_term'
+  label: 'Entity view (Taxonomy term)'
+  provider: ctools
+  label_display: visible
+  view_mode: full
+  context_mapping:
+    entity: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false

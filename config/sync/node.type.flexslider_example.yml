@@ -1,0 +1,13 @@
+uuid: e39ef46f-6a90-42ef-97c5-e59f33dc4d58
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ZKLBRbjl5UG0kwr8JGtMP5Hjh55_t4CGPdtRRvUpHaM
+name: 'FlexSlider Example'
+type: flexslider_example
+description: 'Used for generating example FlexSlider implementations'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

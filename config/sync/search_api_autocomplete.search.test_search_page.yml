@@ -1,0 +1,57 @@
+uuid: 4bbcd865-3c18-4a0b-b368-2a87c1a639ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.local_index
+    - views.view.test_search_page
+  module:
+    - views
+    - search_api_autocomplete
+id: test_search_page
+label: 'Search Page'
+index_id: local_index
+suggester_settings:
+  live_results:
+    fields: {  }
+    highlight:
+      enabled: false
+      field: ''
+    view_modes:
+      'entity:node':
+        article: ''
+        cast: ''
+        flexslider_example: ''
+        layout_pages: ''
+        list: ''
+        movie: ''
+        movie_review: ''
+        news: ''
+        page: ''
+        webform: ''
+      'entity:taxonomy_term':
+        genre: ''
+        news: ''
+        tags: ''
+      'entity:user':
+        user: ''
+  server:
+    fields: {  }
+suggester_weights:
+  live_results: 0
+  server: 0
+suggester_limits:
+  live_results: 10
+  server: 10
+search_settings:
+  'views:test_search_page':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 1
+  show_count: false
+  delay: null
+  submit_button_selector: ':submit'
+  autosubmit: true

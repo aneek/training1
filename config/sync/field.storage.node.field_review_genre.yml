@@ -1,0 +1,20 @@
+uuid: 21f2c497-72a8-4952-a7a6-349691796537
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_review_genre
+field_name: field_review_genre
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

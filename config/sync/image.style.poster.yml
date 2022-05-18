@@ -1,0 +1,15 @@
+uuid: 32e4d296-6467-4167-95a0-0c099599cbce
+langcode: en
+status: true
+dependencies: {  }
+name: poster
+label: 'Poster 250x300'
+effects:
+  9ad30fae-9f57-4b8d-bc4a-e976c5b6971e:
+    uuid: 9ad30fae-9f57-4b8d-bc4a-e976c5b6971e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 250
+      height: 300
+      anchor: center-center

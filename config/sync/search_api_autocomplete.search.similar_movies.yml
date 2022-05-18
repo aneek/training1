@@ -1,0 +1,28 @@
+uuid: 926645ca-9f62-4094-9937-9295d11a7788
+langcode: en
+status: false
+dependencies:
+  config:
+    - search_api.index.local_index
+    - views.view.similar_movies
+  module:
+    - views
+    - search_api_autocomplete
+id: similar_movies
+label: 'Similar Movies'
+index_id: local_index
+suggester_settings:
+  live_results:
+    fields: {  }
+    highlight:
+      enabled: false
+      field: ''
+    view_modes: {  }
+suggester_weights: {  }
+suggester_limits: {  }
+search_settings:
+  'views:similar_movies':
+    displays:
+      default: true
+      selected: {  }
+options: {  }

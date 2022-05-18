@@ -1,0 +1,23 @@
+uuid: 201fe0f1-4713-48e9-a14e-2bd91c01fdde
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - drupal_custom_theme
+id: sitebranding
+theme: drupal_custom_theme
+region: hero
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

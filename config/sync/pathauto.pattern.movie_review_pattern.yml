@@ -1,0 +1,22 @@
+uuid: ac50982c-ef38-44ff-85d5-bcb1d2d2f876
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: movie_review_pattern
+label: 'Movie Review Pattern'
+type: 'canonical_entities:node'
+pattern: 'movie-reviews/[node:title]'
+selection_criteria:
+  f3551ea3-6335-401d-b5ca-e84bb152771f:
+    id: node_type
+    bundles:
+      movie_review: movie_review
+    negate: false
+    context_mapping:
+      node: node
+    uuid: f3551ea3-6335-401d-b5ca-e84bb152771f
+selection_logic: and
+weight: -5
+relationships: {  }

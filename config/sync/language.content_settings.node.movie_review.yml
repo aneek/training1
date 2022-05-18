@@ -1,0 +1,11 @@
+uuid: 487aaecf-30e5-453b-8708-56265ead384c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.movie_review
+id: node.movie_review
+target_entity_type_id: node
+target_bundle: movie_review
+default_langcode: site_default
+language_alterable: false

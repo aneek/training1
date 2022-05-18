@@ -1,0 +1,18 @@
+uuid: 671ce33b-5653-4ce2-99f0-615398819efb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Layout Pages'
+type: layout_pages
+description: 'The Layout Pages content type is used when a new layout needs to be created and assigned to specific pages in the site.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

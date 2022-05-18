@@ -1,0 +1,33 @@
+uuid: 9b267fe1-b9d2-47ed-9ab7-a69e27578d4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.test_cast_paragraph.field_cast_reference
+    - paragraphs.paragraphs_type.test_cast_paragraph
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.test_cast_paragraph.default
+targetEntityType: paragraph
+bundle: test_cast_paragraph
+mode: default
+content:
+  field_cast_reference:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

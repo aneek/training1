@@ -1,0 +1,29 @@
+uuid: a4ad31ff-1974-4ef7-bf83-0b7bfa28a5c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.movie
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_views_block__movie_block_1
+theme: bootstrap_barrio
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'views_block:movie-block_1'
+settings:
+  id: 'views_block:movie-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: '5'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/movies\r\n/movies-by-genre\r\n/movies-by-genre/*"

@@ -1,0 +1,22 @@
+uuid: 5d19a3ae-1656-4c38-bd48-51df882e12f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - movie_db
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: movie_db_powered
+theme: movie_db
+region: footer_fifth
+weight: -11
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

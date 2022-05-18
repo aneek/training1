@@ -1,0 +1,25 @@
+uuid: 13acb7a3-34d0-4eaf-9913-75972fe1772e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - movie_db
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: movie_db_branding
+theme: movie_db
+region: header
+weight: -11
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

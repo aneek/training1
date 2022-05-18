@@ -1,0 +1,28 @@
+uuid: 1d1a0e35-0f1e-4e90-9d45-d3e142259a5f
+langcode: en
+status: false
+dependencies:
+  config:
+    - search_api.index.local_index
+    - views.view.test_similar_movies_carousel
+  module:
+    - views
+    - search_api_autocomplete
+id: test_similar_movies_carousel
+label: 'Test Similar Movies Carousel'
+index_id: local_index
+suggester_settings:
+  live_results:
+    fields: {  }
+    highlight:
+      enabled: false
+      field: ''
+    view_modes: {  }
+suggester_weights: {  }
+suggester_limits: {  }
+search_settings:
+  'views:test_similar_movies_carousel':
+    displays:
+      default: true
+      selected: {  }
+options: {  }

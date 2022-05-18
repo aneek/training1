@@ -1,0 +1,29 @@
+uuid: ed5c3cfe-bdd6-49d8-aaa7-16dc7d27c907
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.test_search_page
+  module:
+    - system
+    - views
+  theme:
+    - movie_db
+id: views_block__test_search_page_block_1
+theme: movie_db
+region: sidebar_second
+weight: -11
+provider: null
+plugin: 'views_block:test_search_page-block_1'
+settings:
+  id: 'views_block:test_search_page-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /solr-search-page

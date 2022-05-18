@@ -1,0 +1,23 @@
+uuid: 2d590829-1b07-4619-92ab-509860454291
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_links
+    - node.type.movie
+  module:
+    - link
+id: node.movie.field_movie_links
+field_name: field_movie_links
+entity_type: node
+bundle: movie
+label: 'Movie Links'
+description: 'Links to IMDB, Netflix, Amazon Prime etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

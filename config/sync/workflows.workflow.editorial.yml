@@ -1,0 +1,95 @@
+uuid: 40b0cbb5-ee79-4112-b835-ec1669936898
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+    - node.type.cast
+    - node.type.flexslider_example
+    - node.type.layout_pages
+    - node.type.list
+    - node.type.movie
+    - node.type.news
+    - node.type.page
+    - node.type.webform
+  module:
+    - content_moderation
+_core:
+  default_config_hash: Ln7YAg2WXZ-5wn9ib-v9qOKFxF2YZLnwSKtX-V455hE
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archived
+      weight: 5
+      published: false
+      default_revision: true
+    draft:
+      label: Draft
+      weight: -5
+      published: false
+      default_revision: false
+    in_review:
+      label: 'In Review'
+      weight: 6
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 0
+      published: true
+      default_revision: true
+  transitions:
+    archive:
+      label: Archive
+      from:
+        - published
+      to: archived
+      weight: 0
+    archived_draft:
+      label: 'Restore to Draft'
+      from:
+        - archived
+      to: draft
+      weight: 1
+    archived_published:
+      label: Restore
+      from:
+        - archived
+      to: published
+      weight: 2
+    create_draft:
+      label: 'Draft To Review'
+      from:
+        - draft
+        - published
+      to: in_review
+      weight: -2
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+      to: draft
+      weight: -3
+    review_to_publish:
+      label: 'Review To Publish'
+      from:
+        - draft
+        - in_review
+        - published
+      to: published
+      weight: -1
+  entity_types:
+    node:
+      - article
+      - cast
+      - flexslider_example
+      - layout_pages
+      - list
+      - movie
+      - news
+      - page
+      - webform
+  default_moderation_state: draft

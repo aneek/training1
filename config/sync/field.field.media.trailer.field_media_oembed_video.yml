@@ -1,0 +1,19 @@
+uuid: f95fea35-9458-49d5-9bcd-d6a7ebaa3825
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_oembed_video
+    - media.type.trailer
+id: media.trailer.field_media_oembed_video
+field_name: field_media_oembed_video
+entity_type: media
+bundle: trailer
+label: 'Remote video URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,131 @@
+uuid: 1977dc0e-1aa2-4da8-a192-a044fcd7c630
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cast.body
+    - field.field.node.cast.field_age
+    - field.field.node.cast.field_gender
+    - field.field.node.cast.field_p
+    - node.type.cast
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Section 1'
+          context_mapping: {  }
+          column_widths: 25-75
+        components:
+          a97dd5e3-5548-4d33-8e3e-a054deac43e3:
+            uuid: a97dd5e3-5548-4d33-8e3e-a054deac43e3
+            region: first
+            configuration:
+              id: 'field_block:node:cast:field_p'
+              label: 'Person''s Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: content
+                  image_style: thumbnail_100x100
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          2d7379cd-5aa8-4b91-ac6b-8251d357d875:
+            uuid: 2d7379cd-5aa8-4b91-ac6b-8251d357d875
+            region: second
+            configuration:
+              id: 'field_block:node:cast:field_age'
+              label: Age
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: number_integer
+                label: inline
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          cbe51f06-0c2d-48f1-8b0a-dcb81d46ca4b:
+            uuid: cbe51f06-0c2d-48f1-8b0a-dcb81d46ca4b
+            region: second
+            configuration:
+              id: 'field_block:node:cast:field_gender'
+              label: Gender
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: boolean
+                label: inline
+                settings:
+                  format: default
+                  format_custom_false: ''
+                  format_custom_true: ''
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.cast.teaser
+targetEntityType: node
+bundle: cast
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_age:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_gender:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_p: true
+  langcode: true
+  search_api_excerpt: true

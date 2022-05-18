@@ -1,0 +1,14 @@
+uuid: 5583a345-9322-4ce1-9147-8e7789c4cee2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+id: feedback
+label: 'Website feedback'
+recipients:
+  - dokhoa343@gmail.com
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

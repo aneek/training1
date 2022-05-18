@@ -1,0 +1,23 @@
+uuid: 94fd3881-bd5b-429d-92b7-5f049b741920
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - movie_db
+_core:
+  default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
+id: movie_db_search
+theme: movie_db
+region: sidebar_first
+weight: -10
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  label_display: visible
+  provider: search
+  page_id: node_search
+visibility: {  }

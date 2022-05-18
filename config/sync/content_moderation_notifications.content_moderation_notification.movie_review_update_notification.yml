@@ -1,0 +1,20 @@
+uuid: 91c4220e-5474-44dd-9192-95a1aac51c5d
+langcode: en
+status: true
+dependencies: {  }
+id: movie_review_update_notification
+workflow: movie_review_workflow
+transitions:
+  publish: publish
+roles:
+  authenticated: authenticated
+  administrator: administrator
+  critic: critic
+author: true
+site_mail: false
+emails: dokhoa342@gmail.com
+subject: '[node:title] has been updated'
+body:
+  value: "<h1><i><strong>Notification of content update</strong></i></h1>\r\n\r\n<p>The [node:content-type]&nbsp;[node:title] has been updated. Please do a quick review of the changes.</p>\r\n\r\n<p><a href=\"[node:url]\">Content link</a></p>\r\n\r\n<p>Date of update: [node:changed]</p>\r\n"
+  format: full_html
+label: 'Movie Review Update Notification'

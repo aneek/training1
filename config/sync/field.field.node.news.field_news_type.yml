@@ -1,0 +1,29 @@
+uuid: f19b5a28-5c8a-4eb1-a6a6-8a9b5544db15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_type
+    - node.type.news
+    - taxonomy.vocabulary.news
+id: node.news.field_news_type
+field_name: field_news_type
+entity_type: node
+bundle: news
+label: 'News Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news: news
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

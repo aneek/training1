@@ -1,0 +1,57 @@
+uuid: 92dd435a-4be3-4d63-9556-631fc1eebf90
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.test_cast_paragraph.field_cast_reference
+    - paragraphs.paragraphs_type.test_cast_paragraph
+  module:
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Section 1'
+          context_mapping: {  }
+        components:
+          b77fc316-1338-43f1-aca9-f73a5586df25:
+            uuid: b77fc316-1338-43f1-aca9-f73a5586df25
+            region: content
+            configuration:
+              id: 'field_block:paragraph:test_cast_paragraph:field_cast_reference'
+              label: 'Cast Reference'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_label
+                settings:
+                  link: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+id: paragraph.test_cast_paragraph.preview
+targetEntityType: paragraph
+bundle: test_cast_paragraph
+mode: preview
+content:
+  field_cast_reference:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  search_api_excerpt: true

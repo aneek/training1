@@ -1,0 +1,22 @@
+#content{
+  display: inline-block;
+  width: 73%;
+}
+
+#sidebar{
+  display: inline-block;
+  width: 25%;
+  position: sticky;
+  float: right;
+}
+
+.layout-container{
+  box-sizing: border-box;
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#hero{
+  text-align: center;
+}

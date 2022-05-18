@@ -1,0 +1,25 @@
+uuid: 551295b9-f244-4053-b6b9-ab8e4d1cac59
+langcode: en
+status: true
+dependencies:
+  module:
+    - quicktabs
+    - system
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_quicktabslatestnewsquicktabs
+theme: bootstrap_barrio
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'quicktabs_block:latest_news_quick_tabs'
+settings:
+  id: 'quicktabs_block:latest_news_quick_tabs'
+  label: 'Latest News'
+  label_display: visible
+  provider: quicktabs
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/news\r\n/news/*"

@@ -1,0 +1,14 @@
+uuid: 023a37c3-fc6b-476c-b195-1c43d578a0ca
+name: MovieDB
+mail: dokhoa343@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/148
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

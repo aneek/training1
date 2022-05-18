@@ -1,0 +1,29 @@
+uuid: 877c61c4-bbfe-49c9-9e34-c58a81cbe616
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.movie_review
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: views_block__movie_review_block_1
+theme: bartik
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'views_block:movie_review-block_1'
+settings:
+  id: 'views_block:movie_review-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: '5'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/movie-reviews\r\n/movie-reviews/*\r\n/reviews-by-genre\r\n/reviews-by-genre/*"
+    negate: false

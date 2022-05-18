@@ -1,0 +1,23 @@
+uuid: 034fef21-2eac-4c3f-82b6-15a21d7bf549
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - drupal_custom_theme
+_core:
+  default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
+id: drupal_custom_theme_search
+theme: drupal_custom_theme
+region: header
+weight: -10
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  label_display: visible
+  provider: search
+  page_id: node_search
+visibility: {  }

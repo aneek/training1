@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Workbench module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\workbench\Render\Element\WorkbenchToolbar;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function workbench_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.workbench':
+      $text = file_get_contents(dirname(__FILE__) . '/README.md');
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return workbench_parse_help($text);
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_toolbar().
+ */
+function workbench_toolbar() {
+  // The 'Workbench' tab is a simple link, with no corresponding tray.
+  $user = \Drupal::currentUser();
+
+  $items = [];
+  if ($user->hasPermission('access workbench')) {
+    $items['workbench'] = [
+      '#type' => 'toolbar_item',
+      'tab' => [
+        '#type' => 'link',
+        '#title' => t('Workbench'),
+        '#url' => Url::fromRoute('workbench.content'),
+        '#attributes' => [
+          'title' => t('My personal editorial workspace'),
+          'class' => ['toolbar-icon', 'toolbar-icon-workbench-content-tab'],
+        ],
+      ],
+      'tray' => [
+        '#heading' => t('Your Workbench'),
+        'workbench_toolbar' => [
+          '#pre_render' => [
+            [WorkbenchToolbar::class, 'preRenderTray'],
+          ],
+        ],
+        '#type' => 'container',
+      ],
+      '#attached' => [
+        'library' => [
+          'workbench/workbench.toolbar',
+        ],
+      ],
+      '#weight' => -18,
+    ];
+  }
+  return $items;
+}
+
+/**
+ * Simplified display of help text without markdown module.
+ *
+ * @param $text
+ *   The help text markdown.
+ *
+ * @return HTML
+ */
+function workbench_parse_help($text) {
+  $find = "```\n\n";
+  $replace = '</pre>';
+  $text = str_replace($find, $replace, $text);
+  $find = "```";
+  $replace = '<pre>';
+  $text = str_replace($find, $replace, $text);
+  $find = ["\n"];
+  $replace = ['<br />'];
+  $text = str_replace($find, $replace, $text);
+  return $text;
+}

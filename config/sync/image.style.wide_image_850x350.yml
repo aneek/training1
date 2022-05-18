@@ -1,0 +1,15 @@
+uuid: efd938d3-94e3-4c8f-a105-c54c91ecc317
+langcode: en
+status: true
+dependencies: {  }
+name: wide_image_850x350
+label: 'Wide Image 850x350'
+effects:
+  7e43c558-6b00-47c4-a6dc-4de1d04269ea:
+    uuid: 7e43c558-6b00-47c4-a6dc-4de1d04269ea
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 850
+      height: 350
+      anchor: center-center

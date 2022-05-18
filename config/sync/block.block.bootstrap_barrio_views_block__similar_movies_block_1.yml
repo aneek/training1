@@ -1,0 +1,32 @@
+uuid: f0317de8-491b-4a38-957a-e997e9e433fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.similar_movies
+  module:
+    - node
+    - views
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_views_block__similar_movies_block_1
+theme: bootstrap_barrio
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_block:similar_movies-block_1'
+settings:
+  id: 'views_block:similar_movies-block_1'
+  label: 'Similar Movies'
+  label_display: visible
+  provider: views
+  views_label: 'Similar Movies'
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      movie: movie

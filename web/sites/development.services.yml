@@ -4,9 +4,9 @@
 # 'example.settings.local.php' file, which sits next to this file.
 parameters:
   http.response.debug_cacheability_headers: true
-  twig:
+  twig.config:
     debug: true
-    auto_reload: true
+    auto-reload: true
     cache: false
 services:
   cache.backend.null:

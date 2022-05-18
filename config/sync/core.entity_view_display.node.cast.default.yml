@@ -1,0 +1,161 @@
+uuid: 948c80ab-b691-43e8-9348-079f0b1a80ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.cast.body
+    - field.field.node.cast.field_age
+    - field.field.node.cast.field_gender
+    - field.field.node.cast.field_p
+    - node.type.cast
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: Main
+          column_widths: 33-67
+          context_mapping: {  }
+        components:
+          07abe5a5-f090-43d7-9f04-144beaee34c5:
+            uuid: 07abe5a5-f090-43d7-9f04-144beaee34c5
+            region: second
+            configuration:
+              id: 'field_block:node:cast:field_age'
+              label: Age
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: inline
+                type: number_integer
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          0dad2aca-8e9a-438a-ade5-d0861bbb942c:
+            uuid: 0dad2aca-8e9a-438a-ade5-d0861bbb942c
+            region: second
+            configuration:
+              id: 'field_block:node:cast:field_gender'
+              label: Gender
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: inline
+                type: boolean
+                settings:
+                  format: default
+                  format_custom_true: ''
+                  format_custom_false: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          fb0776a6-40e5-4044-bd8b-7ee687ad7d63:
+            uuid: fb0776a6-40e5-4044-bd8b-7ee687ad7d63
+            region: first
+            configuration:
+              id: 'field_block:node:cast:field_p'
+              label: 'Person''s Image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Bio
+          context_mapping: {  }
+        components:
+          e91be0e8-63ee-481d-ab24-3a8722afc5a5:
+            uuid: e91be0e8-63ee-481d-ab24-3a8722afc5a5
+            region: content
+            configuration:
+              id: 'field_block:node:cast:body'
+              label: Bio
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+id: node.cast.default
+targetEntityType: node
+bundle: cast
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_age:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_gender:
+    weight: 103
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_p:
+    type: entity_reference_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

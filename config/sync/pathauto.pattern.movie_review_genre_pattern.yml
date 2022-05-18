@@ -1,0 +1,23 @@
+uuid: 5f8ae88a-c8c4-4f2f-8c24-766d8b53bec6
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: movie_review_genre_pattern
+label: movie_review_genre_pattern
+type: 'canonical_entities:taxonomy_term'
+pattern: 'movie-reviews/[term:name]'
+selection_criteria:
+  50361b9c-9b3b-4937-96c9-77e0f8fe5e12:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      genre: genre
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 50361b9c-9b3b-4937-96c9-77e0f8fe5e12
+selection_logic: and
+weight: -5
+relationships: {  }

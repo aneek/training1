@@ -1,0 +1,29 @@
+uuid: f04d7001-d7c6-4f98-8a94-046da0e734b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.movie
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: views_block__movie_block_1
+theme: bartik
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'views_block:movie-block_1'
+settings:
+  id: 'views_block:movie-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: '5'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/movies\r\n/movies-by-genre\r\n/movies-by-genre/*"
+    negate: false

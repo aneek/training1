@@ -1,0 +1,21 @@
+name: Drupal Custom Theme
+type: theme
+description: A custom theme for studying site building
+package: Custom
+base theme: bootstrap_barrio
+core: 8.x
+core_version_requirement: ^8 || ^9
+regions:
+  header: Header
+  hero: 'Hero (full width)'
+  content: Content
+  sidebar: 'Sidebar'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_fifth: 'Footer fifth'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer Bottom'
+libraries:
+  - drupal_custom_theme/global-styling

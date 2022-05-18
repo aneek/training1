@@ -1,0 +1,240 @@
+/*
+Theme Name: Bootstrap 4 Sass
+Description: Bootstrap 4 with Sass
+*/
+
+// import files
+@import "import";
+
+/* GENERAL STYLES
+-------------------------------------------------*/
+
+body {
+    background: $white;
+}
+
+
+/* COLORS
+--------------------------------------------------*/
+
+a {
+    color: $link-color;
+}
+
+.bg-inverse {
+    background: $primary-shade !important;
+}
+
+.site-footer {
+  background: rgb(36,0,5);
+  background: radial-gradient(circle, rgba(36,0,5,1) 10%, rgba(154,33,143,1) 47%, rgba(132,0,255,0.9948354341736695) 91%);
+}
+
+.menu--main li a {
+    color: $primary-shade;
+}
+
+.menu--account li a {
+    color: $primary-shade;
+}
+
+.site-name-slogan a {
+    text-decoration: none;
+}
+
+.card-group img {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.card-group .field--type-image {
+    margin: 0
+}
+
+.slick {
+    width: 100%;
+}
+
+.slick>div {
+    margin: 0 15px;
+}
+
+#content{
+  display: inline-block;
+  width: 73%;
+  .views-row{
+    border-bottom: #dee2e6 1px solid;
+    margin-top: 15px;
+  }
+}
+
+#sidebar_second{
+  display: inline-block;
+  width: 25%;
+  position: sticky;
+  float: right;
+  padding-right: 0;
+}
+
+.layout-container{
+  box-sizing: border-box;
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#hero{
+  text-align: center;
+  background-color: white;
+  max-width: 100%;
+}
+
+#footer-menu{
+  display: block;
+  padding-left: 20px;
+}
+
+#footer-menu li{
+  display: inline-block;
+  padding: 5px;
+}
+#footer-menu .nav-item .nav-link{
+  color: #F15926;
+}
+
+#main-nav{
+  display: inline-block;
+  float: right;
+  position: relative;
+  padding-right: 50px;
+  font-size: 20px;
+}
+#main-nav li{
+  display: inline-block;
+  padding: 5px;
+}
+
+#main-nav .nav-item .nav-link{
+  color: #f15926;
+}
+
+#page-name{
+  color: white;
+}
+
+//#menu{
+//  background-color: #343232;
+//}
+
+#site-branding{
+  padding-left: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: inline-block;
+  float: left;
+}
+
+#footer{
+  box-sizing: border-box;
+  max-width: 100%;
+  alignment: center;
+}
+
+
+.custom-page-title{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  h1{
+    font-weight: bold;
+  }
+}
+
+#header{
+  max-width: 100%;
+  background: rgb(7,22,1);
+  background: radial-gradient(circle, rgba(7,22,1,1) 71%, rgba(48,154,33,1) 79%, rgba(255,235,0,0.9948354341736695) 87%, rgba(69,69,210,0.9948354341736695) 95%);
+}
+
+#page-wrapper{
+  background: rgb(19,199,241);
+  background: linear-gradient(180deg, rgba(19,199,241,1) 14%, rgba(205,49,10,1) 37%, rgba(235,217,13,1) 62%, rgba(106,208,64,0.9948354341736695) 87%);
+}
+
+#main-wrapper{
+  background-color: white;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 700;
+  font-size: 20px;
+  font-stretch: ultra-condensed;
+}
+
+#main{
+  background: black;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .content{
+    padding: 15px;
+  }
+
+  #block-mdb{
+    .block{
+      border-radius: 10px;
+      background: white;
+      border-collapse: collapse;
+    }
+  }
+}
+
+
+#block-movie-db-powered{
+  a{
+    color: #f15926;
+  }
+  padding-left: 20px;
+  color: white;
+}
+
+#hero-title{
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 46px;
+}
+
+#block-title{
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+.node--type-movie-review{
+  border-bottom: #ffffff 0 none;
+}
+
+.button{
+  color: #2a2a2d;
+  background-color: #0bd21c;
+  font-weight: bold;
+  border-color: #e8cc3c;
+}
+
+.movie-row{
+  .content-movie{
+    display: flex;
+  }
+
+  .content-movie-body{
+    display: inline;
+    position: relative;
+    float: left;
+  }
+
+  .content-movie-img{
+    display: inline;
+    float: left;
+    position: relative;
+    padding-right: 15px;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+}

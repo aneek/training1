@@ -1,0 +1,13 @@
+uuid: d5c757ba-619a-4643-bd55-e97f0dcfc262
+langcode: en
+status: true
+dependencies: {  }
+id: critic
+label: Critic
+weight: 3
+is_admin: null
+permissions:
+  - 'create movie_review content'
+  - 'delete own movie_review content'
+  - 'edit own movie_review content'
+  - 'use critic_review_moderation transition create_new_draft'

@@ -1,0 +1,77 @@
+uuid: 712f4759-d9db-4150-ba70-822585b2c6f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.movie_review
+  module:
+    - content_moderation
+id: movie_review_workflow
+label: 'Movie Review Workflow'
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archived
+      weight: 3
+      published: false
+      default_revision: true
+    draft:
+      label: Draft
+      weight: 0
+      published: false
+      default_revision: false
+    in_review:
+      label: 'In review'
+      weight: 2
+      published: false
+      default_revision: true
+    published:
+      label: Published
+      weight: 1
+      published: true
+      default_revision: true
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+      to: draft
+      weight: -3
+    draft_to_review:
+      label: 'Draft To Review'
+      from:
+        - draft
+        - in_review
+      to: in_review
+      weight: -2
+    publish:
+      label: Publish
+      from:
+        - draft
+        - in_review
+        - published
+      to: published
+      weight: -1
+    published_to_archived:
+      label: 'Published To Archived'
+      from:
+        - published
+      to: archived
+      weight: 0
+    restore_to_draft:
+      label: 'Restore To Draft'
+      from:
+        - archived
+      to: draft
+      weight: 1
+    restore_to_published:
+      label: 'Restore To Published'
+      from:
+        - archived
+      to: published
+      weight: 2
+  entity_types:
+    node:
+      - movie_review
+  default_moderation_state: draft

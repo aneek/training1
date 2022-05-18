@@ -1,0 +1,18 @@
+uuid: 79db13f6-2440-4215-af45-b6ae2fd80a53
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Movie Review'
+type: movie_review
+description: 'A review for a movie.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

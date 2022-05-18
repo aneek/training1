@@ -1,0 +1,32 @@
+uuid: 29d1d3a3-34f2-4483-b72f-8251842f508a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.movie
+  module:
+    - ctools
+    - views
+  theme:
+    - bartik
+id: views_block__movie_block_2_2
+theme: bartik
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'views_block:movie-block_2'
+settings:
+  id: 'views_block:movie-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      movie: movie
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

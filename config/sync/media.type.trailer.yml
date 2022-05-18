@@ -1,0 +1,18 @@
+uuid: 83550474-ee54-479f-a71c-6782e1f33a3e
+langcode: en
+status: true
+dependencies: {  }
+id: trailer
+label: Trailer
+description: 'A media type to store trailer for a movie.'
+source: 'oembed:video'
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  thumbnails_directory: 'public://oembed_thumbnails'
+  providers:
+    - YouTube
+    - Vimeo
+  source_field: field_media_oembed_video
+field_map:
+  title: name

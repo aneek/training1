@@ -1,0 +1,99 @@
+uuid: e9a95698-caab-41db-8371-8615c7accfc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.webform.body
+    - field.field.node.webform.webform
+    - node.type.webform
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+    - webform
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          c347a53e-c773-4be4-9cf0-2d2da67a7960:
+            uuid: c347a53e-c773-4be4-9cf0-2d2da67a7960
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:webform:links'
+            additional: {  }
+            weight: 0
+          5fcd2713-c7b0-4847-b03f-46ec4b54875e:
+            uuid: 5fcd2713-c7b0-4847-b03f-46ec4b54875e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:webform:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+          25dc6e90-f05b-43bb-b0a3-c761a113eecc:
+            uuid: 25dc6e90-f05b-43bb-b0a3-c761a113eecc
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:webform:webform'
+              formatter:
+                label: hidden
+                settings:
+                  source_entity: true
+                third_party_settings: {  }
+                type: webform_entity_reference_entity_view
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+_core:
+  default_config_hash: 3r1i0UMUbeNHhvmiqHDYznoS4G9XR1jq6lQ49r80lDE
+id: node.webform.default
+targetEntityType: node
+bundle: webform
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  webform:
+    weight: 102
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,35 @@
+uuid: 6d8bfbd1-d015-4832-9983-62f2ae517533
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.trailer.field_media_oembed_video
+    - media.type.trailer
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: media.trailer.media_library
+targetEntityType: media
+bundle: trailer
+mode: media_library
+content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_oembed_video: true
+  name: true
+  path: true
+  status: true
+  uid: true

@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: rpfRQVoEn2ZWd_lw-iULKPiuina5CqcmzXWlz1OjTwM
+name: MovieDB
+mail: dokhoa343@gmail.com
+simple_address: false
+sitestyle: true
+textonly: false
+linkonly: false
+user_plaintext_field: ''
+format: full_html
+preserve_class: false
+advanced:
+  incoming: false
+  key: QTPc3-55RwnMH-KpmuyumXfJfBqdR7Ae8pGiHzVCRAk

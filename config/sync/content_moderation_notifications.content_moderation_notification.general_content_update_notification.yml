@@ -1,0 +1,20 @@
+uuid: 961ef4d5-c4fc-4e09-add5-a7e8075a9651
+langcode: en
+status: true
+dependencies: {  }
+id: general_content_update_notification
+workflow: editorial
+transitions:
+  review_to_publish: review_to_publish
+roles:
+  authenticated: authenticated
+  administrator: administrator
+  critic: critic
+author: true
+site_mail: false
+emails: ''
+subject: '[node:title] has been updated'
+body:
+  value: "<p>Some text here.</p>\r\n"
+  format: basic_html
+label: 'General Content Update Notification'

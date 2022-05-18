@@ -1,0 +1,16 @@
+uuid: e391043e-2c0e-4e97-af7b-0fa2e295f5cd
+langcode: en
+status: true
+dependencies: {  }
+id: movie
+label: Movie
+description: 'A media type to hold the images for each Movie content type.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map:
+  name: name
+  width: name
+  height: name

@@ -1,0 +1,32 @@
+uuid: c96674db-10f4-4a69-bbed-cf4243852ed0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_rating
+    - node.type.movie
+  module:
+    - fivestar
+id: node.movie.field_movie_rating
+field_name: field_movie_rating
+entity_type: node
+bundle: movie
+label: 'Movie Rating'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    rating: 100
+    target: null
+default_value_callback: ''
+settings:
+  stars: 5
+  allow_clear: true
+  allow_revote: true
+  allow_ownvote: true
+  rated_while: viewing
+  enable_voting_target: false
+  target_bridge_field: ''
+  target_fivestar_field: ''
+field_type: fivestar

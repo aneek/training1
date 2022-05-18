@@ -1,0 +1,20 @@
+uuid: 70c8a9e9-9cb4-4627-9df0-76acf648c502
+langcode: en
+status: true
+dependencies:
+  module:
+    - fivestar
+    - node
+id: node.field_movie_rating
+field_name: field_movie_rating
+entity_type: node
+type: fivestar
+settings:
+  vote_type: vote
+module: fivestar
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

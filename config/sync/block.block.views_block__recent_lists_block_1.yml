@@ -1,0 +1,24 @@
+uuid: 0574fdec-317c-4ea7-9269-db11da125410
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recent_lists
+  module:
+    - views
+  theme:
+    - movie_db
+id: views_block__recent_lists_block_1
+theme: movie_db
+region: sidebar_second
+weight: -10
+provider: null
+plugin: 'views_block:recent_lists-block_1'
+settings:
+  id: 'views_block:recent_lists-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

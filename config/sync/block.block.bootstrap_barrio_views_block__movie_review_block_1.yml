@@ -1,0 +1,29 @@
+uuid: 0fccb1db-5ab9-4051-acf8-ac9f8910b7b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.movie_review
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_views_block__movie_review_block_1
+theme: bootstrap_barrio
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'views_block:movie_review-block_1'
+settings:
+  id: 'views_block:movie_review-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: '5'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/movie-reviews\r\n/movie-reviews/*\r\n/reviews-by-genre\r\n/reviews-by-genre/*"

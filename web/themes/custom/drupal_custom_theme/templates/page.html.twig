@@ -1,0 +1,37 @@
+<div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner">
+      <div class="section layout-container clearfix">
+          {{ page.header }}
+      </div>
+      <div id="hero" class="section layout-container clearfix">
+        {{ page.hero }}
+      </div>
+    </header>
+    <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main row">
+        <main id="content" class="column" role="main">
+          <section class="section">
+            {{ page.content }}
+          </section>
+        </main>
+        <aside id="sidebar" class="section sidebar clearfix" role="complementary">
+          {{ page.sidebar}}
+        </aside>
+      </div>
+    </div>
+    <footer id="footer" class="site-footer">
+      <div class="layout-container">
+        <div class="site-footer__top clearfix">
+          {{ page.footer_first }}
+          {{ page.footer_second }}
+          {{ page.footer_third }}
+          {{ page.footer_fourth }}
+        </div>
+        <div class="site-footer__bottom clearfix">
+          {{ page.footer_fifth }}
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

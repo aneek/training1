@@ -1,0 +1,157 @@
+uuid: 140f70af-f20c-436f-8ddd-6785a024dc18
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.movie_review.body
+    - field.field.node.movie_review.field_comments
+    - field.field.node.movie_review.field_movie_reference
+    - field.field.node.movie_review.field_review_genre
+    - node.type.movie_review
+  module:
+    - comment
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          934e6b2c-0943-425e-bdae-d2e6ca90094c:
+            uuid: 934e6b2c-0943-425e-bdae-d2e6ca90094c
+            region: content
+            configuration:
+              id: 'field_block:node:movie_review:field_movie_reference'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          86e179a9-b53e-4810-b6e0-a88dc36652e6:
+            uuid: 86e179a9-b53e-4810-b6e0-a88dc36652e6
+            region: content
+            configuration:
+              id: 'field_block:node:movie_review:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          7ee1d0a6-bf9c-49b6-ae0a-4759ecc84520:
+            uuid: 7ee1d0a6-bf9c-49b6-ae0a-4759ecc84520
+            region: content
+            configuration:
+              id: 'extra_field_block:node:movie_review:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 5
+            additional: {  }
+          b0e1a1f8-dc2a-494e-a6eb-558779bcb503:
+            uuid: b0e1a1f8-dc2a-494e-a6eb-558779bcb503
+            region: content
+            configuration:
+              id: 'field_block:node:movie_review:field_comments'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: above
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          6bc3b2ed-1a5a-4308-b94b-005a1181c492:
+            uuid: 6bc3b2ed-1a5a-4308-b94b-005a1181c492
+            region: content
+            configuration:
+              id: 'field_block:node:movie_review:field_review_genre'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+        third_party_settings: {  }
+id: node.movie_review.default
+targetEntityType: node
+bundle: movie_review
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_comments:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_movie_reference:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_review_genre:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

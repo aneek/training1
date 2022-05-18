@@ -1,0 +1,18 @@
+uuid: 6f2e424e-c8d9-4e76-8656-368f88452a23
+langcode: en
+status: true
+dependencies: {  }
+id: dev
+label: Dev
+description: ''
+weight: 0
+folder: ../config/dev
+module:
+  dblog: 0
+  views_ui: 0
+theme: {  }
+blacklist:
+  - system.performance
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

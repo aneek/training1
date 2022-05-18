@@ -1,0 +1,29 @@
+uuid: 23b6497c-84cf-43f2-9269-b2e4a3a1bcd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.movie_review
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap_sass
+id: bootstrap_sass_views_block__movie_review_block_1
+theme: bootstrap_sass
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'views_block:movie_review-block_1'
+settings:
+  id: 'views_block:movie_review-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: '5'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/movie-reviews\r\n/movie-reviews/*\r\n/reviews-by-genre\r\n/reviews-by-genre/*"

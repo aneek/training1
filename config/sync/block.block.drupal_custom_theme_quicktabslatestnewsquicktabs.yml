@@ -1,0 +1,25 @@
+uuid: 1e22b2b5-52fb-462f-828d-cd676689dde7
+langcode: en
+status: false
+dependencies:
+  module:
+    - quicktabs
+    - system
+  theme:
+    - drupal_custom_theme
+id: drupal_custom_theme_quicktabslatestnewsquicktabs
+theme: drupal_custom_theme
+region: header
+weight: -7
+provider: null
+plugin: 'quicktabs_block:latest_news_quick_tabs'
+settings:
+  id: 'quicktabs_block:latest_news_quick_tabs'
+  label: 'Latest News'
+  label_display: visible
+  provider: quicktabs
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/news\r\n/news/*"

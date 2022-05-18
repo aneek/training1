@@ -1,0 +1,32 @@
+uuid: aae2d09e-3fab-4e12-a488-b1e4a1ba17b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.test_similar_movies_carousel
+  module:
+    - node
+    - views
+  theme:
+    - movie_db
+id: movie_db_views_block__test_similar_movies_carousel_block_1
+theme: movie_db
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:test_similar_movies_carousel-block_1'
+settings:
+  id: 'views_block:test_similar_movies_carousel-block_1'
+  label: 'Similar Movies'
+  label_display: visible
+  provider: views
+  views_label: 'Similar Movies'
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      movie: movie

@@ -1,0 +1,25 @@
+uuid: e8272a86-e948-4315-b434-e90b40ca2075
+langcode: en
+status: true
+dependencies:
+  module:
+    - quicktabs
+    - system
+  theme:
+    - movie_db
+id: movie_db_quicktabslatestnewsquicktabs
+theme: movie_db
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'quicktabs_block:latest_news_quick_tabs'
+settings:
+  id: 'quicktabs_block:latest_news_quick_tabs'
+  label: 'Latest News'
+  label_display: visible
+  provider: quicktabs
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/news\r\n/news/*"

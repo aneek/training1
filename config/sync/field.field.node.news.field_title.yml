@@ -1,0 +1,21 @@
+uuid: 4e8b541a-adcc-4c17-b8fd-229584ec7e43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title
+    - node.type.news
+  module:
+    - text
+id: node.news.field_title
+field_name: field_title
+entity_type: node
+bundle: news
+label: Title
+description: 'The title of the news.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
