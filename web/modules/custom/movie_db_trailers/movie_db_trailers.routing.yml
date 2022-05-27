@@ -1,0 +1,7 @@
+movie_db_trailers.trailers:
+  path: '/trailers'
+  defaults:
+    _controller: '\Drupal\movie_db_trailers\Controller\TrailersController::trailers'
+    _title: 'All the trailers for this movie'
+  requirements:
+    _permission: 'access content'

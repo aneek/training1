@@ -34,3 +34,81 @@ function movie_db_form_system_theme_settings_alter(&$form, FormStateInterface $f
 //{
 //  dump($variables);
 //}
+
+
+function movie_db_preprocess_menu__main(&$variables) {
+  $variables['attributes']['class'][] = 'menu-primary-movie-db';
+}
+
+function movie_db_preprocess_views_view_fields__recent_lists(&$variables) {
+  //dump($variables);
+  $str = trim(strip_tags($variables['fields']['body']->content));
+  //dump($str);
+  $variables['fields']['title']->element_attributes['data-bs-toggle'] ="tooltip";
+  $variables['fields']['title']->element_attributes['data-bs-placement'] ="left";
+  $variables['fields']['title']->element_attributes['title'] = $str;
+  $variables['fields']['body']->element_attributes .= ' style = display:none ';
+
+}
+
+
+function movie_db_preprocess_field__node__title__movie_review(&$variables){
+    $current_user = \Drupal::currentUser();
+    $uid = $current_user->id();
+    $node = \Drupal::request()->attributes->get('node');
+    if(!is_null($node)){
+      $nuid = $node->getOwnerId();
+    }
+    if($uid == $nuid){
+      $variables['items']['item']['content'] .= '(This is your content)';
+    }
+}
+
+function movie_db_preprocess_page(&$variables)
+{
+  $variables['current_logged_in_user'] = \Drupal::currentUser()->id();
+  $time = (int)date('H');
+  dump($time);
+  $checkTime = $time >= 8;
+  if (!$checkTime){
+    $variables['content_attributes']['class'][] = 'site-light-theme';
+  }
+  else{
+    $variables['content_attributes']['class'][] = 'site-dark-theme';
+  }
+  //dump($variables);
+}
+
+function movie_db_js_alter(&$javascript) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.node.canonical') {
+    unset($javascript['themes/custom/movie_db/js/barrio.js']);
+    unset($javascript['themes/contrib/bootstrap_sass/js/barrio.js']);
+    unset($javascript['themes/custom/movie_db/js/bootstrap.min.js']);
+    unset($javascript['themes/custom/movie_db/js/custom.js']);
+    unset($javascript['themes/custom/movie_db/js/popper.min.js']);
+//    unset($javascript['themes/custom/movie_db/js/bootstrap.bundle.min.js']);
+  }
+}
+
+//function movie_db_css_alter(&$css)
+//{
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'system').'/system.theme.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module','system').'/system.base.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'system').'/system.messages.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'comment').'/comment.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'field').'/theme/field.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'mollom').'/mollom.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'node').'/node.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'search').'/search.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'user').'/user.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'views').'/css/views.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'ctools').'/css/ctools.css']);
+//  unset($css[\Drupal::service('extension.path.resolver')->getPath('module', 'panels').'/css/panels.css']);
+//}
+
+//
+//function movie_db_process_html(&$variables)
+//{
+//  $variables['styles'] = null;
+//  $variables['scripts'] = null;
+//}

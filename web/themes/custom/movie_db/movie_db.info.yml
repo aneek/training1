@@ -4,12 +4,18 @@ description: 'Movie DB bootstrap based theme v1.0'
 # version: VERSION
 core: 8.x
 core_version_requirement: ^8 || ^9
-base theme: bootstrap_sass
+base theme: bootstrap_barrio
 
 libraries:
+  - movie_db/bootstrap
+  - movie_db/global_tooltip
   - movie_db/global-styling
 libraries-override:
   bootstrap_barrio/global-styling: false
+  bootstrap/global-styling: false
+libraries-extend:
+  bootstrap/tooltip:
+    - movie_db/tooltip
 regions:
   top_header: 'Top header'
   top_header_form: 'Top header form'

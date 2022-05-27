@@ -197,9 +197,10 @@
 {#    </footer>#}
 {#  </div>#}
 {#</div>#}
-<div id="page-wrapper">
+<div id="page-wrapper" class="page-main-layout">
   <div id="page">
     <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <main {{ content_attributes }}>
       <header id="header" class="header" role="banner">
         <div id="menu" class="section layout-container clearfix">
           {{ page.header }}
@@ -215,7 +216,7 @@
           </section>
         </main>
         <aside id="sidebar_second" class="section sidebar clearfix" role="complementary">
-          {{ page.sidebar_second}}
+          {{ page.sidebar_second }}
         </aside>
       </div>
       <footer id="footer" class="site-footer layout-container">
@@ -229,6 +230,7 @@
           {{ page.footer_fifth }}
         </div>
       </footer>
+      </main>
     </div>
   </div>
 </div>
