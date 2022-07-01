@@ -1,0 +1,7 @@
+transcode_profile.admin_settings:
+  path: '/admin/config/system/transcode-profile/settings'
+  defaults:
+    _form: '\Drupal\transcode_profile\Form\ConfigForm'
+  requirements:
+    _permission: 'administer site configuration'
+

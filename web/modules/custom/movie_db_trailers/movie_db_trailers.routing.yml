@@ -1,7 +1,19 @@
 movie_db_trailers.trailers:
-  path: '/trailers'
+  path: '/trailers/{node}'
+  options:
+    parameters:
+      node:
+        type: entity:node
   defaults:
     _controller: '\Drupal\movie_db_trailers\Controller\TrailersController::trailers'
-    _title: 'All the trailers for this movie'
+    _title_callback: '\Drupal\movie_db_trailers\Controller\TrailersController::getTitle'
+  requirements:
+    _permission: 'access content'
+
+movie_db_trailers.modal:
+  path: '/trailers/view/{tid}'
+  defaults:
+    _title: 'Modal'
+    _controller: '\Drupal\movie_db_trailers\Controller\CustomModalController::modal'
   requirements:
     _permission: 'access content'

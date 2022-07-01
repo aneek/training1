@@ -1,0 +1,15 @@
+<?php
+
+function movie_db_trailers_theme($existing, $type, $theme, $path): array
+{
+  return [
+    'trailers_page' => [
+      'template'  => 'trailers-page',
+      'variables' => [
+        'title' => null,
+        'items'  => [],
+        'view_more' => null
+      ]
+    ]
+  ];
+}

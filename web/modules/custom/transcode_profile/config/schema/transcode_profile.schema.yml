@@ -1,0 +1,13 @@
+transcode_profile.settings:
+  type: config_object
+  label: 'Transcode profile settings'
+  mapping:
+    transcode_profile:
+      type: mapping
+      mapping:
+        name:
+          type: text
+          label: 'Transcode profile name'
+        enable:
+          type: boolean
+          label: 'Enable transcode profile'

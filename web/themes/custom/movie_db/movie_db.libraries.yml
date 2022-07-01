@@ -2,8 +2,8 @@ global-styling:
   version: VERSION
   js:
     js/bootstrap.bundle.min.js: { weight: -50 }
-    js/popper.min.js: {}
-    js/bootstrap.min.js: {}
+    js/popper.min.js: { weight: -20 }
+    js/bootstrap.min.js: { weight: -30 }
     js/barrio.js: {}
     js/custom.js: {}
     js/tooltip.js: {}
@@ -14,3 +14,33 @@ global-styling:
     - core/jquery
     - core/drupal
     - core/popperjs
+
+textillate-init:
+  js:
+    js/textillate-init.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - movie_db/lettering
+    - movie_db/textillate
+    - core/once
+
+lettering:
+  remote: https://letteringjs.com/
+  version: 0.7.0
+  license:
+    name: MIT
+    url: https://github.com/davatron5000/Lettering.js/blob/master/README.md
+    gpl-compatible: true
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js: { type: external, minified: true }
+
+textillate:
+  remote: https://github.com/jschr/textillate
+  version: 0.4.0
+  license:
+    name: MIT
+    url: https://github.com/jschr/textillate/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js: { type: external, minified: true }

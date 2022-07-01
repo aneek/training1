@@ -1,0 +1,9 @@
+name: Cinemas system
+type: module
+description: 'A system for cinemas.'
+package: Custom
+core_version_requirement: ^9
+libraries:
+  - cinemas/cinemas
+dependencies:
+  - drupal:block

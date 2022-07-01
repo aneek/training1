@@ -7,6 +7,7 @@ core_version_requirement: ^8 || ^9
 base theme: bootstrap_barrio
 
 libraries:
+  - movie_db/textillate-init
   - movie_db/bootstrap
   - movie_db/global_tooltip
   - movie_db/global-styling

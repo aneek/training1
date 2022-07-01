@@ -1,0 +1,19 @@
+<?php
+
+function cinemas_theme($existing, $type, $theme, $path)
+{
+  return [
+    'cinemas_page' => [
+      'template'  => 'cinemas-page',
+      'variables' => [
+        'items'  => [],
+      ],
+    ],
+    'cinema_modal' => [
+      'template' => 'cinema-modal',
+      'variables' => [
+        'cinema' => null,
+      ],
+    ],
+  ];
+}

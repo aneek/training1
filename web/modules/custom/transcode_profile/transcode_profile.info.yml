@@ -1,0 +1,8 @@
+name: Movie DB Config Profile
+type: module
+version: 1.x
+description: 'Custom module to save configs profile.'
+package: custom
+core_version_requirement: ^9
+
+configure: transcode_profile.admin_settings

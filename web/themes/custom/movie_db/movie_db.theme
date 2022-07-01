@@ -12,29 +12,77 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * Replace Barrio setting options with subtheme ones.
  */
-function movie_db_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
+function movie_db_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+//  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
+//    'bg-primary' => t('Primary'),
+//    'bg-secondary' => t('Secondary'),
+//    'bg-light' => t('Light'),
+//    'bg-dark' => t('Dark'),
+//    'bg-white' => t('White'),
+//    'bg-transparent' => t('Transparent'),
+//  );
+//  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
+//    'bg-primary' => t('Primary'),
+//    'bg-secondary' => t('Secondary'),
+//    'bg-light' => t('Light'),
+//    'bg-dark' => t('Dark'),
+//    'bg-white' => t('White'),
+//    'bg-transparent' => t('Transparent'),
+//  );
+
+  if (isset($form_id)){
+    return;
+  }
+  $elements = [
+//    'h1>strong>a' => t('h1'),
+//    'h2>strong>a' => t('h2'),
+//    'h3>strong>a' => t('h3'),
+    'h1' => t('h1'),
+    'h2' => t('h2'),
+    'h3' => t('h3'),
+    'p' => t('General texts'),
+    '.animated-page-title' => t('Page title'),
+  ];
+
+  $form['textillate_wrapper'] = [
+    '#type' => 'details',
+    '#title' => t('Textillate Settings'),
+    '#open' => TRUE,
+  ];
+
+  $form['textillate_wrapper']['movie_db_textillate_enable'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable Textillate Animation'),
+    '#default_value' => theme_get_setting('movie_db_textillate_enable'),
+    '#description' => t('Select this to enable the animation of any tag.'),
   );
-  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
+
+  $form['textillate_wrapper']['movie_db_textillate_element'] = array(
+    '#type' => 'select',
+    '#title' => t('Textillate Element'),
+    '#options' => $elements,
+    '#default_value' => theme_get_setting('movie_db_textillate_enable'),
+    '#description' => t('Select which element where the style applies.'),
+    '#states' => [
+      'visible' => [
+        ':input[name="movie_db_textillate_enable"]' => ['checked' => TRUE],
+      ]
+    ],
   );
 }
 //function movie_db_preprocess_region(&$variables)
 //{
 //  dump($variables);
 //}
-
+function movie_db_page_attachments_alter(array &$attachments){
+  // Add drupalSettings if the theme settings are set.
+  $enabled = theme_get_setting('movie_db_textillate_enable');
+  $element = theme_get_setting('movie_db_textillate_element');
+  $attachments['#attached']['drupalSettings']['movie_db']['textillate_settings'] = [
+    'enabled' => $enabled,
+    'element' => $element,
+  ];
+}
 
 function movie_db_preprocess_menu__main(&$variables) {
   $variables['attributes']['class'][] = 'menu-primary-movie-db';
@@ -60,7 +108,7 @@ function movie_db_preprocess_field__node__title__movie_review(&$variables){
       $nuid = $node->getOwnerId();
     }
     if($uid == $nuid){
-      $variables['items']['item']['content'] .= '(This is your content)';
+      $variables['items']['item']['content'] .= ' (This is your content)';
     }
 }
 
@@ -68,8 +116,9 @@ function movie_db_preprocess_page(&$variables)
 {
   $variables['current_logged_in_user'] = \Drupal::currentUser()->id();
   $time = (int)date('H');
-  dump($time);
-  $checkTime = $time >= 8;
+  //$variables['title_attributes']['class'][] = 'animated-page-title';
+  //dump($variables);
+  $checkTime = $time >= 19;
   if (!$checkTime){
     $variables['content_attributes']['class'][] = 'site-light-theme';
   }
@@ -83,10 +132,9 @@ function movie_db_js_alter(&$javascript) {
   if (\Drupal::routeMatch()->getRouteName() == 'entity.node.canonical') {
     unset($javascript['themes/custom/movie_db/js/barrio.js']);
     unset($javascript['themes/contrib/bootstrap_sass/js/barrio.js']);
-    unset($javascript['themes/custom/movie_db/js/bootstrap.min.js']);
+    //unset($javascript['themes/custom/movie_db/js/bootstrap.min.js']);
     unset($javascript['themes/custom/movie_db/js/custom.js']);
-    unset($javascript['themes/custom/movie_db/js/popper.min.js']);
-//    unset($javascript['themes/custom/movie_db/js/bootstrap.bundle.min.js']);
+    //unset($javascript['themes/custom/movie_db/js/popper.min.js']);
   }
 }
 

@@ -1,0 +1,5 @@
+cinemas.settings_form:
+  title: 'Cinemas System Configuration'
+  parent: system.admin_config_system
+  description: 'Configure cinema'
+  route_name: cinemas.settings_form

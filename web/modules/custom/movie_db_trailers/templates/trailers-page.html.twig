@@ -1,0 +1,24 @@
+<table class="table">
+  <thead class="bg-dark text-light">
+  <tr>
+    <td>Title</td>
+    <td>Video</td>
+  </tr>
+  </thead>
+  <tbody>
+  {% for trailer in items %}
+    <tr>
+      <td>{{ trailer.title }}</td>
+      <td>
+        <a class="use-ajax"
+           data-dialog-options="{&quot;width&quot;:400}"
+           data-dialog-type="modal"
+           href="/trailers/view/{{ trailer.video_id }}">
+          Watch Trailer
+        </a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+

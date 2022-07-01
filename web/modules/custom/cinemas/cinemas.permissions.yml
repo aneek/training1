@@ -1,0 +1,3 @@
+administer cinemas configuration:
+  title: 'Administer cinemas configuration'
+  restrict access: true

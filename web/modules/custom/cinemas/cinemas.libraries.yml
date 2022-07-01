@@ -1,0 +1,13 @@
+cinemas:
+  js:
+    js/cinemas.js: {}
+  css:
+    theme:
+      css/cinemas.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.dialog.ajax #Required for dialogs
+    - core/jquery.form #If you also want to use Ajax for form operations
+#    - cinemas/jquery-labelauty

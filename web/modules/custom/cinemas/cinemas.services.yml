@@ -1,0 +1,7 @@
+services:
+  cinemas.service:
+    class: Drupal\cinemas\Service\CinemasService
+    arguments: ['@http_client', '@config.factory', '@key.repository', '@setting.service']
+  setting.service:
+    class: Drupal\cinemas\Service\SettingService
+    arguments: ['@http_client','@key.repository', '@state']
