@@ -51,7 +51,8 @@ class CinemasBlock extends BlockBase implements ContainerFactoryPluginInterface 
   public function build()
   {
     $node = \Drupal::routeMatch()->getParameter('node');
-    $nid = $node->nid[0]->getValue()['value'];
+    //$nid = 0;
+    $node == null ? $nid = 4 : $nid = $node->nid[0]->getValue()['value'];
     $items = [];
     $cinemas = $this->cinemasService->responseByMovieId($nid);
     foreach ($cinemas as $cinema){

@@ -69,8 +69,8 @@ class CustomModalController extends ControllerBase {
         'class' => 'my-cinemas-img',
         'src' => $data->image,
         'alt' => t('Cinema Image'),
-        'width' => '150',
-        'heigth' => '100',
+        'width' => '640',
+        'heigth' => '500',
       ],
     ];
     $address = [
