@@ -1,0 +1,64 @@
+# Cake theme breakpoints file.
+
+# What is breakpoint in Drupal?
+# Drupal 8 and above, has mobile first design approach so responsiveness is out of the box. Due to this, it was
+# really important that Drupal must provide a way to implement and expose different types of media queries along with
+# different viewport configurations. This is the reason that breakpoints.yml file was introduced.
+
+# Where we can define this?
+# Either a module or a theme can provide breakpoint configurations. Remember, there is no UI to implement this.
+# Naming convention of this file should be <module_name OR theme_name>.breakpoints.yml
+
+# What are the properties of this file?
+# Each entry in this file defines one breakpoint, consisting of a machine name, by which the breakpoint entry is
+# uniquely identified e.g. bartik.mobile, and its children defining the breakpoint's properties:
+# 1. label - A human readable label for the breakpoint.
+# 2. mediaQuery - Media query text proper, e.g. 'all and (min-width: 851px)'.
+# 3. weight - Positional weight (order) for the breakpoint.
+# 4. multipliers - Supported pixel resolution multipliers. (say, for Retina display)
+
+# More details - https://www.drupal.org/docs/theming-drupal/working-with-breakpoints-in-drupal
+
+cake.layout.mobile:
+  label: mobile
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+  group: Cake Layout
+cake.layout.narrow:
+  label: narrow
+  mediaQuery: 'screen and (min-width: 750px)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: Cake Layout
+cake.layout.wide:
+  label: wide
+  mediaQuery: 'screen and (min-width: 1080px)'
+  weight: 2
+  multipliers:
+    - 1x
+  group: Cake Layout
+
+cake.imagesize.mobile:
+  label: mobile
+  mediaQuery: 'screen and (max-width: 560px)'
+  weight: 0
+  multipliers:
+    - 1x
+  group: Cake Image Sizing
+cake.imagesize.narrow:
+  label: narrow
+  mediaQuery: 'all and (max-width: 960px)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: Cake Image Sizing
+cake.imagesize.wide:
+  label: wide
+  mediaQuery: 'all and (min-width: 961px)'
+  weight: 2
+  multipliers:
+    - 1x
+  group: Cake Image Sizing
